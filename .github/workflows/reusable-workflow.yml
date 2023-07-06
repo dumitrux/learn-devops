@@ -1,0 +1,19 @@
+name: Reusable workflow example
+
+on:
+  workflow_call:
+    inputs:
+      devel:
+        description: 'enable pipeline devel'
+        required: true
+        type: boolean
+        default: false
+
+jobs:
+  output-devel:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: output 
+        id: set-matrix
+        run: |
+            echo devel=${{ inputs.devel }}

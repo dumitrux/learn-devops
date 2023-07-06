@@ -1,10 +1,9 @@
 name: Say hello
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
+  # push:
+  #   branches: [main]
 
 jobs:
   hello_world:
