@@ -1,0 +1,13 @@
+name: Call a reusable workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-workflow:
+    uses: dumitrux/github-actions/.github/workflows/reusable-workflow.yml@main
+
+  call-workflow-passing-data:
+    uses: dumitrux/github-actions/.github/workflows/reusable-workflow.yml@main
+    with:
+      devel: true
