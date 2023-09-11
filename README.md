@@ -1,6 +1,5 @@
 - [Source control](#source-control)
 - [Command line](#command-line)
-  - [References:](#references)
 - [CI/CD](#cicd)
 - [Docker](#docker)
 - [Kubernetes](#kubernetes)
@@ -25,7 +24,6 @@ Tools:
 - [PowerShell](./powershell/READ)
 
 References:
-- 
 
 # CI/CD
 Continuous Integration and Continuous Delivery (CI/CD) is the method to frequently deliver apps to customers by introducing automation into the stages of app development.
