@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-09-11T18:32:12+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Learn DevOps</title><subtitle>Learn about DevOps
+</subtitle><author><name>dumitrux</name></author><entry><title type="html">Terraform</title><link href="http://localhost:4000/jekyll/update/2023-09-11-terraform.html" rel="alternate" type="text/html" title="Terraform" /><published>2023-09-11T16:10:20+02:00</published><updated>2023-09-11T16:10:20+02:00</updated><id>http://localhost:4000/jekyll/update/terraform</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2023-09-11-terraform.html">&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#terrform-info&quot;&gt;Terrform info&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#locals&quot;&gt;Locals&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#modules&quot;&gt;Modules&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#count-vs-for_each&quot;&gt;Count vs For_each&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#import-vs-data-source&quot;&gt;Import vs Data Source&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#features-block&quot;&gt;Features Block&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#dynamic-blocks&quot;&gt;Dynamic Blocks&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#override&quot;&gt;Override&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#terrform-practice&quot;&gt;Terrform practice&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#install-terraform&quot;&gt;Install Terraform&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#conenct-to-azure&quot;&gt;Conenct to Azure&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#azure-storage-account&quot;&gt;Azure Storage account&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#terraform-commands&quot;&gt;Terraform commands&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#terraform-code&quot;&gt;Terraform code&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#access-the-vm&quot;&gt;Access the VM&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#custom-data&quot;&gt;Custom data&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#install-remote-ssh-vsc-extension-to-access-the-remote-vm&quot;&gt;Install remote SSH VSC extension to access the remote VM&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#data-sources&quot;&gt;Data sources&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#outputs&quot;&gt;Outputs&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#variables&quot;&gt;Variables&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#conditionals&quot;&gt;Conditionals&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;terrform-info&quot;&gt;Terrform info&lt;/h1&gt;
+&lt;p&gt;References:
+https://youtube.com/playlist?list=PLnWpsLZNgHzVVslxs8Bwq19Ng0ff4XlFv&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use the resources instead of variables to set a dependency on the creation of the resource.&lt;/li&gt;
+  &lt;li&gt;Terraforms treats all the divided .tf files as the same file.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;locals&quot;&gt;Locals&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;To assign a name to an expression.&lt;/li&gt;
+  &lt;li&gt;Update the local to modify all instance of the expression.&lt;/li&gt;
+  &lt;li&gt;Helps with repeating values.&lt;/li&gt;
+  &lt;li&gt;Overuse can make code difficult to read.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;modules&quot;&gt;Modules&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Reusable code.&lt;/li&gt;
+  &lt;li&gt;Collection of resources.&lt;/li&gt;
+  &lt;li&gt;Accepts inputs, produces outputs.&lt;/li&gt;
+  &lt;li&gt;Modules are not a single instance of a resource.&lt;/li&gt;
+  &lt;li&gt;Modules is a collection of resources.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Example: https://github.com/tsrob50/TerraformExamples/tree/main/ModuleExample&lt;/p&gt;
+
+&lt;h2 id=&quot;count-vs-for_each&quot;&gt;Count vs For_each&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Count&lt;/strong&gt;
+Use count if the instances of the resources are almost identical.
+Using the index to identify the different instances.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For_each&lt;/strong&gt;
+Multiple versions of similar versions.
+Uses areguments where the value is mapped to a set of strings.
+Map is a key value pair.&lt;/p&gt;
+
+&lt;p&gt;Example: https://github.com/tsrob50/TerraformExamples/tree/main/VNetandBastionHost&lt;/p&gt;
+
+&lt;h2 id=&quot;import-vs-data-source&quot;&gt;Import vs Data Source&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Import&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Imports infraestructure into Terraform management.&lt;/li&gt;
+  &lt;li&gt;Added to Terraform state and managed by Terraform going forward.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Data Source&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Allows Terraform to define and use existing infraestructure.&lt;/li&gt;
+  &lt;li&gt;Not managed by Terraform.&lt;/li&gt;
+  &lt;li&gt;Data refreshed during Terraform Plan.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;features-block&quot;&gt;Features Block&lt;/h2&gt;
+&lt;p&gt;Docs: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/features-block&lt;/p&gt;
+
+&lt;h2 id=&quot;dynamic-blocks&quot;&gt;Dynamic Blocks&lt;/h2&gt;
+&lt;p&gt;Use for reosurce that have repetable nested blocks in their arguments.
+For example, servers can hhave multiple disks or NICs.&lt;/p&gt;
+
+&lt;p&gt;A for_each loop is used to create multiple similar instances of an object such as a resource.
+A Dynamic Block uses a for_each loop to create multiple copies of a sub-resource nested inside a resource.&lt;/p&gt;
+
+&lt;p&gt;Example: https://github.com/tsrob50/TerraformExamples/tree/main/DynamicNSG&lt;/p&gt;
+
+&lt;h2 id=&quot;override&quot;&gt;Override&lt;/h2&gt;
+&lt;p&gt;Avoid using.
+Useful for automation, it changes settings without modifying source files.&lt;/p&gt;
+
+&lt;p&gt;Override file allows to override values in a Terraform deployment.
+It consists of a set of configurations that replace the values in existing .tf files.&lt;/p&gt;
+
+&lt;p&gt;After all the .tf files are processed by Terraform, the override files are merged into the configuration. The merge replaces the values supplied by the configuration files.&lt;/p&gt;
+
+&lt;p&gt;The name convention is important.
+The files are processed or merged in lexicographical order (alphabetic order).
+Override File Names:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;override.tf, override.tf.json&lt;/li&gt;
+  &lt;li&gt;test_override.tf, test_override.tf.json&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;terrform-practice&quot;&gt;Terrform practice&lt;/h1&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;https://youtu.be/V53AHWun17s&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;install-terraform&quot;&gt;Install Terraform&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Donwload terraform.exe&lt;/li&gt;
+  &lt;li&gt;Move to “C:\Program Files\Terraform”&lt;/li&gt;
+  &lt;li&gt;Edit PATH environment variable&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform --version&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;conenct-to-azure&quot;&gt;Conenct to Azure&lt;/h2&gt;
+&lt;p&gt;Azure CLI&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;az login &lt;span class=&quot;nt&quot;&gt;--use-device-code&lt;/span&gt;
+az account show
+az account &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--subscription&lt;/span&gt; &amp;lt;subscription_id&amp;gt;
+
+az group list &lt;span class=&quot;nt&quot;&gt;--query&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;[?name=='mtc-resources']&quot;&lt;/span&gt;
+az network vnet subnet list &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; rg-mock &lt;span class=&quot;nt&quot;&gt;--vnet-name&lt;/span&gt; vnet-mock &lt;span class=&quot;nt&quot;&gt;--query&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;[?name=='subnet-mock']&quot;&lt;/span&gt;
+
+az vm image list &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--publisher&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Canonical&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; images.json
+az vm image list &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--publisher&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Canonical&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--sku&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;22_04-lts-gen2&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;azure-storage-account&quot;&gt;Azure Storage account&lt;/h2&gt;
+&lt;p&gt;The Storage account name has to be unique.&lt;/p&gt;
+
+&lt;p&gt;Do not create the Storage Account with Terraform.
+Consider that the Terraform state file in the Storage Account is not a stateless resource.
+Meaning it cannot be destroyed and recreat it as needed.
+There is state date in the Storage Account needed for deployments.&lt;/p&gt;
+
+&lt;p&gt;The ACCOUNT_KEY is not needed if the deployment is don trough a Pipeline.&lt;/p&gt;
+
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$SUBCRIPTION_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$RESOURCE_GROUP_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rg-tfstate&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$STORAGE_ACCOUNT_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tfstate01&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get-random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CONTAINER_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;=&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tfstate&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;
+
+# Set subscription to be the current active subscription.
+az account show
+az account set --subscription &amp;lt;subscription_id&amp;gt;
+
+# Create resource group
+az group create --name &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$RESOURCE_GROUP_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; --location eastus
+
+# Create storage account
+az storage account create --resource-group &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$RESOURCE_GROUP_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; --name &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$STORAGE_ACCOUNT_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; --sku Standard_LRS --encryption-services blob
+
+# Create blob container
+az storage container create --name &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CONTAINER_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; --account-name &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$STORAGE_ACCOUNT_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+
+#Get the storage access key and store it as an environment variable
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ACCOUNT_KEY&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;az&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;storage&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;account&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--resource-group&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$RESOURCE_GROUP_NAME&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--account-name&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$STORAGE_ACCOUNT_NAME&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--query&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'[0].value'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tsv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ARM_ACCESS_KEY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ACCOUNT_KEY&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Docs: https://developer.hashicorp.com/terraform/language/settings/backends/azurerm&lt;/p&gt;
+
+&lt;h2 id=&quot;terraform-commands&quot;&gt;Terraform commands&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;terraform init
+terraform frmt
+terraform plan
+
+terraform apply &lt;span class=&quot;nt&quot;&gt;-help&lt;/span&gt;
+terraform apply
+terraform apply &lt;span class=&quot;nt&quot;&gt;-auto-approve&lt;/span&gt;
+terraform apply &lt;span class=&quot;nt&quot;&gt;-replace&lt;/span&gt; azurerm_linux_virtual_machine.mtc-vm
+terraform apply &lt;span class=&quot;nt&quot;&gt;-refresh-only&lt;/span&gt;
+
+terraform state list
+terraform state show azurerm_resource_group.mtc-rg
+terraform state show azurerm_public_ip.mtc-nic
+
+terraform output
+terraform output public_ip_address
+
+terraform refresh
+
+terraform plan &lt;span class=&quot;nt&quot;&gt;-destroy&lt;/span&gt;
+terraform apply &lt;span class=&quot;nt&quot;&gt;-destroy&lt;/span&gt;
+terraform destroy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;terraform-code&quot;&gt;Terraform code&lt;/h2&gt;
+&lt;p&gt;State file and its backup, do not modify unless is strictly necessary.
+More info: https://developer.hashicorp.com/terraform/language/state&lt;/p&gt;
+
+&lt;p&gt;In mtc-test-rule.source_address_prefix, should be your public IP to connect to the Azure resources from local.&lt;/p&gt;
+
+&lt;h2 id=&quot;access-the-vm&quot;&gt;Access the VM&lt;/h2&gt;
+&lt;p&gt;Create SSH key to access the VM:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; rsa
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\d&lt;/span&gt;umitrux/.ssh/privatekey
+
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; ~/.ssh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;SSH into the VM&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;terraform state show azurerm_public_ip.mtc-vm
+
+ssh &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; ~/.ssh/privatekey adminuser@&amp;lt;vm_ip&amp;gt;
+lsb_release &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;custom-data&quot;&gt;Custom data&lt;/h2&gt;
+&lt;p&gt;This will delete and create the VM&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; ~/.ssh/privatekey adminuser@&amp;lt;vm_ip&amp;gt;
+docker &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;install-remote-ssh-vsc-extension-to-access-the-remote-vm&quot;&gt;Install remote SSH VSC extension to access the remote VM&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Install VSC extension “Remote - SSH”&lt;/li&gt;
+  &lt;li&gt;Open Command Palette (Ctrl+Shift+P)&lt;/li&gt;
+  &lt;li&gt;Type “Remote-ssh: Add New SSH Host…”&lt;/li&gt;
+  &lt;li&gt;Type “ssh adminuser@&lt;vm_ip&gt;&quot;&lt;/vm_ip&gt;&lt;/li&gt;
+  &lt;li&gt;Chose “~/.ssh/config” directory&lt;/li&gt;
+  &lt;li&gt;Open config file&lt;/li&gt;
+  &lt;li&gt;Create “windows-ssh-script.tpl” and “linux-ssh-script.tpl”&lt;/li&gt;
+  &lt;li&gt;Add the “provisioner” attribute in the “azurerm_linux_virtual_machine”&lt;/li&gt;
+  &lt;li&gt;Redeploy all &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform apply -replace azurerm_linux_virtual_machine.mtc-vm&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Type “Remote-ssh: Connect to Host…” on the Command Palette&lt;/li&gt;
+  &lt;li&gt;Select the identifier of the remote machine&lt;/li&gt;
+  &lt;li&gt;Select Linux&lt;/li&gt;
+  &lt;li&gt;Click “Continue” on the provided fingerprint&lt;/li&gt;
+  &lt;li&gt;Wait for docker to be installed and check with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker -version&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;data-sources&quot;&gt;Data sources&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data &quot;azurerm_public_ip&quot; &quot;mtc-ip-data&quot;&lt;/code&gt; in the code&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform apply -refresh-only&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;The data will be at the top of the state file&lt;/li&gt;
+  &lt;li&gt;Check the data with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform state list&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Check the value of the data with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform state show data.azurerm_public_ip.mtc-ip-data&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;outputs&quot;&gt;Outputs&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;output &quot;public_ip_adrress&quot;&lt;/code&gt; in the code&lt;/li&gt;
+  &lt;li&gt;Check value with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform state show data.azurerm_public_ip.mtc-ip-data&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform apply -refresh-only&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform output&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform output public_ip_address&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;variables&quot;&gt;Variables&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;${var.host_os}&lt;/code&gt; in the templatefile of the VM provisioner&lt;/li&gt;
+  &lt;li&gt;Create &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;variables.tf&lt;/code&gt; with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;host_os&lt;/code&gt;variable and plan the deployment&lt;/li&gt;
+  &lt;li&gt;Add the attribute &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default&lt;/code&gt; to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;variables.tf&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform console&lt;/code&gt; and type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var.host_os&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Comment the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default&lt;/code&gt; attribute&lt;/li&gt;
+  &lt;li&gt;Create &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform.tfvars&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform console&lt;/code&gt; and type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var.host_os&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform console -var=&quot;host_os=linux&quot;&lt;/code&gt; and type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var.host_os&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Create &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osx.tfvars&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform console -var-file=&quot;osx.tfvars&quot;&lt;/code&gt; and type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var.host_os&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;conditionals&quot;&gt;Conditionals&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Syntax &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;condition ? true_val : false_val&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Add the conditional in the VM provisioner&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform apply -auto-approve&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>dumitrux</name></author><category term="jekyll" /><category term="update" /><summary type="html">Terrform info Locals Modules Count vs For_each Import vs Data Source Features Block Dynamic Blocks Override Terrform practice Install Terraform Conenct to Azure Azure Storage account Terraform commands Terraform code Access the VM Custom data Install remote SSH VSC extension to access the remote VM Data sources Outputs Variables Conditionals Terrform info References: https://youtube.com/playlist?list=PLnWpsLZNgHzVVslxs8Bwq19Ng0ff4XlFv Use the resources instead of variables to set a dependency on the creation of the resource. Terraforms treats all the divided .tf files as the same file. Locals To assign a name to an expression. Update the local to modify all instance of the expression. Helps with repeating values. Overuse can make code difficult to read. Modules Reusable code. Collection of resources. Accepts inputs, produces outputs. Modules are not a single instance of a resource. Modules is a collection of resources. Example: https://github.com/tsrob50/TerraformExamples/tree/main/ModuleExample Count vs For_each Count Use count if the instances of the resources are almost identical. Using the index to identify the different instances. For_each Multiple versions of similar versions. Uses areguments where the value is mapped to a set of strings. Map is a key value pair. Example: https://github.com/tsrob50/TerraformExamples/tree/main/VNetandBastionHost Import vs Data Source Import Imports infraestructure into Terraform management. Added to Terraform state and managed by Terraform going forward. Data Source Allows Terraform to define and use existing infraestructure. Not managed by Terraform. Data refreshed during Terraform Plan. Features Block Docs: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/features-block Dynamic Blocks Use for reosurce that have repetable nested blocks in their arguments. For example, servers can hhave multiple disks or NICs. A for_each loop is used to create multiple similar instances of an object such as a resource. A Dynamic Block uses a for_each loop to create multiple copies of a sub-resource nested inside a resource. Example: https://github.com/tsrob50/TerraformExamples/tree/main/DynamicNSG Override Avoid using. Useful for automation, it changes settings without modifying source files. Override file allows to override values in a Terraform deployment. It consists of a set of configurations that replace the values in existing .tf files. After all the .tf files are processed by Terraform, the override files are merged into the configuration. The merge replaces the values supplied by the configuration files. The name convention is important. The files are processed or merged in lexicographical order (alphabetic order). Override File Names: override.tf, override.tf.json test_override.tf, test_override.tf.json Terrform practice References: https://youtu.be/V53AHWun17s Install Terraform Donwload terraform.exe Move to “C:\Program Files\Terraform” Edit PATH environment variable terraform --version Conenct to Azure Azure CLI az login --use-device-code az account show az account set --subscription &amp;lt;subscription_id&amp;gt; az group list --query &quot;[?name=='mtc-resources']&quot; az network vnet subnet list -g rg-mock --vnet-name vnet-mock --query &quot;[?name=='subnet-mock']&quot; az vm image list --all --publisher=&quot;Canonical&quot; &amp;gt; images.json az vm image list --all --publisher=&quot;Canonical&quot; --sku=&quot;22_04-lts-gen2&quot; Azure Storage account The Storage account name has to be unique. Do not create the Storage Account with Terraform. Consider that the Terraform state file in the Storage Account is not a stateless resource. Meaning it cannot be destroyed and recreat it as needed. There is state date in the Storage Account needed for deployments. The ACCOUNT_KEY is not needed if the deployment is don trough a Pipeline. $SUBCRIPTION_NAME=&quot;&quot; $RESOURCE_GROUP_NAME=&quot;rg-tfstate&quot; $STORAGE_ACCOUNT_NAME=&quot;tfstate01$(get-random)&quot; $CONTAINER_NAME=&quot;tfstate&quot; # Set subscription to be the current active subscription. az account show az account set --subscription &amp;lt;subscription_id&amp;gt; # Create resource group az group create --name $RESOURCE_GROUP_NAME --location eastus # Create storage account az storage account create --resource-group $RESOURCE_GROUP_NAME --name $STORAGE_ACCOUNT_NAME --sku Standard_LRS --encryption-services blob # Create blob container az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT_NAME #Get the storage access key and store it as an environment variable $ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP_NAME --account-name $STORAGE_ACCOUNT_NAME --query '[0].value' -o tsv) $env:ARM_ACCESS_KEY=$ACCOUNT_KEY Docs: https://developer.hashicorp.com/terraform/language/settings/backends/azurerm Terraform commands terraform init terraform frmt terraform plan terraform apply -help terraform apply terraform apply -auto-approve terraform apply -replace azurerm_linux_virtual_machine.mtc-vm terraform apply -refresh-only terraform state list terraform state show azurerm_resource_group.mtc-rg terraform state show azurerm_public_ip.mtc-nic terraform output terraform output public_ip_address terraform refresh terraform plan -destroy terraform apply -destroy terraform destroy Terraform code State file and its backup, do not modify unless is strictly necessary. More info: https://developer.hashicorp.com/terraform/language/state In mtc-test-rule.source_address_prefix, should be your public IP to connect to the Azure resources from local. Access the VM Create SSH key to access the VM: ssh-keygen -t rsa &amp;gt; C:\Users\dumitrux/.ssh/privatekey ls ~/.ssh SSH into the VM terraform state show azurerm_public_ip.mtc-vm ssh -i ~/.ssh/privatekey adminuser@&amp;lt;vm_ip&amp;gt; lsb_release -a Custom data This will delete and create the VM ssh -i ~/.ssh/privatekey adminuser@&amp;lt;vm_ip&amp;gt; docker --version Install remote SSH VSC extension to access the remote VM Install VSC extension “Remote - SSH” Open Command Palette (Ctrl+Shift+P) Type “Remote-ssh: Add New SSH Host…” Type “ssh adminuser@&quot; Chose “~/.ssh/config” directory Open config file Create “windows-ssh-script.tpl” and “linux-ssh-script.tpl” Add the “provisioner” attribute in the “azurerm_linux_virtual_machine” Redeploy all terraform apply -replace azurerm_linux_virtual_machine.mtc-vm Type “Remote-ssh: Connect to Host…” on the Command Palette Select the identifier of the remote machine Select Linux Click “Continue” on the provided fingerprint Wait for docker to be installed and check with docker -version Data sources Add data &quot;azurerm_public_ip&quot; &quot;mtc-ip-data&quot; in the code Run terraform apply -refresh-only The data will be at the top of the state file Check the data with terraform state list Check the value of the data with terraform state show data.azurerm_public_ip.mtc-ip-data Outputs Add output &quot;public_ip_adrress&quot; in the code Check value with terraform state show data.azurerm_public_ip.mtc-ip-data Run terraform apply -refresh-only Run terraform output or terraform output public_ip_address Variables Add ${var.host_os} in the templatefile of the VM provisioner Create variables.tf with the host_osvariable and plan the deployment Add the attribute default to the variables.tf file Run terraform console and type var.host_os Comment the default attribute Create terraform.tfvars Run terraform console and type var.host_os Run terraform console -var=&quot;host_os=linux&quot; and type var.host_os Create osx.tfvars Run terraform console -var-file=&quot;osx.tfvars&quot; and type var.host_os Conditionals Syntax condition ? true_val : false_val Add the conditional in the VM provisioner Run terraform apply -auto-approve</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2023-09-11-welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2023-09-11T16:10:20+02:00</published><updated>2023-09-11T16:10:20+02:00</updated><id>http://localhost:4000/jekyll/update/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2023-09-11-welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>dumitrux</name></author><category term="jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
