@@ -1,3 +1,12 @@
+---
+title: Terraform
+author: dumitrux
+date: 2023-09-11
+category: Jekyll
+layout: post
+---
+
+
 - [Terrform info](#terrform-info)
   - [Locals](#locals)
   - [Modules](#modules)

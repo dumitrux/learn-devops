@@ -1,3 +1,11 @@
+---
+title: GitHub Actions
+author: dumitrux
+date: 2023-09-11
+category: Jekyll
+layout: post
+---
+
 # Learn GitHub Actions
 - [Learn GitHub Actions](#learn-github-actions)
   - [Registration](#registration)

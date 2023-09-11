@@ -1,9 +1,3 @@
----
-layout: home
-title: Learn DevOps
-permalink: /
----
-
 - [Source control](#source-control)
 - [Command line](#command-line)
 - [CI/CD](#cicd)
@@ -11,8 +5,6 @@ permalink: /
 - [Kubernetes](#kubernetes)
 - [IaC](#iac)
 - [Ansible](#ansible)
-- [Networking](#networking)
-- [Cloud Computing](#cloud-computing)
 
 
 
@@ -28,8 +20,8 @@ References:
 # Command line
 
 Tools:
-- [Bash](./_pages/bash.md)
-- [PowerShell](./_pages/powershell.md)
+- [Bash](./bash/README.md)
+- [PowerShell](./powershell/README.md)
 
 References:
 
@@ -37,7 +29,7 @@ References:
 Continuous Integration and Continuous Delivery (CI/CD) is the method to frequently deliver apps to customers by introducing automation into the stages of app development.
 
 Tools:
-- [GitHub Actions](./_pages/github-actions.md)
+- [GitHub Actions](./github-actions/README.md)
 
 References:
 - [RedHat - What is CI/CD?](https://www.redhat.com/en/topics/devops/what-is-ci-cd)
@@ -50,16 +42,9 @@ References:
 Infrastructure as Code (IaC) is the managing and provisioning of infrastructure through code instead of through manual processes.
 
 Tools:
-- [Terraform](./_pages/terraform.md)
+- [Terraform](./terraform/README.md)
 
 References:
 - [RedHat - What is Infrastructure as Code (IaC)?](https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac)
 
 # Ansible
-
-
-# Networking
-
-# Cloud Computing
-- Azure
-- AWS

@@ -1,3 +1,10 @@
+---
+title: Jekyll
+author: dumitrux
+date: 2023-09-11
+category: Jekyll
+layout: post
+---
 
 # Install
 ```bash
@@ -39,7 +46,15 @@ bundle exec jekyll serve
 ```
 
 # Theme
-https://github.com/sighingnow/jekyll-gitbook
+- [jekyll-gitbook](https://github.com/sighingnow/jekyll-gitbook)
+- [Jekyll Themes](https://jekyllrb.com/docs/themes/)
 
 # Configuration
 https://jekyllrb.com
+https://bookdown.org/yihui/bookdown/html.html
+
+# Disqus
+https://disqus.com/
+
+# buymeacoffee
+https://www.buymeacoffee.com

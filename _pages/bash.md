@@ -1,3 +1,11 @@
+---
+title: Bash
+author: dumitrux
+date: 2023-09-11
+category: Jekyll
+layout: post
+---
+
 Linux commands Cheat Sheet
 - [Move in console](#move-in-console)
 - [File commands](#file-commands)

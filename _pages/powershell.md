@@ -1,3 +1,11 @@
+---
+title: PowerShell
+author: dumitrux
+date: 2023-09-11
+category: Jekyll
+layout: post
+---
+
 PowerShell Basic commands
 
 - [Iterate through files in a directory](#iterate-through-files-in-a-directory)
