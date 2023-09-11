@@ -25,6 +25,7 @@ group :jekyll_plugins do
   gem 'jekyll-readme-index'
   gem 'jemoji'
   gem 'webrick'
+  gem 'jekyll-remote-theme', '~> 0.4.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
