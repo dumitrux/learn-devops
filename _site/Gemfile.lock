@@ -264,6 +264,7 @@ DEPENDENCIES
   github-pages (~> 228)
   jekyll-feed (~> 0.6)
   jekyll-readme-index
+  jekyll-remote-theme (~> 0.4.3)
   jemoji
   tzinfo (~> 1.2)
   tzinfo-data
