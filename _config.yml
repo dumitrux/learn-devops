@@ -11,8 +11,8 @@ github_username:  dumitrux
 facebook_username: 
 gitbook_version:  3.2.3
 
-url:              'https://dumitrux.github.io/learn-devops/'
-baseurl:          ''
+url:              'https://dumitrux.github.io'
+baseurl:          '/learn-devops'
 
 # bootstrap: use the remote theme for the site itself
 remote_theme: sighingnow/jekyll-gitbook
