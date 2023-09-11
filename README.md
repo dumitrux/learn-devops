@@ -3,15 +3,15 @@
   - [Registration](#registration)
   - [Introduction](#introduction)
   - [General](#general)
-    - [Specific](#specific)
-      - [Learn GitHub Actions](#learn-github-actions-1)
-      - [Using Workflows](#using-workflows)
-      - [Build and test](#build-and-test)
-      - [Deployment - Target different environments](#deployment---target-different-environments)
-      - [Monitor \& troubleshoot](#monitor--troubleshoot)
-      - [GitHub and Self-hosted runners](#github-and-self-hosted-runners)
-      - [Creating actions](#creating-actions)
-      - [GitHub Actions API](#github-actions-api)
+  - [Most relevant sections](#most-relevant-sections)
+    - [Learn GitHub Actions](#learn-github-actions-1)
+    - [Using Workflows](#using-workflows)
+    - [Build and test](#build-and-test)
+    - [Deployment - Target different environments](#deployment---target-different-environments)
+    - [Monitor \& troubleshoot](#monitor--troubleshoot)
+    - [GitHub and Self-hosted runners](#github-and-self-hosted-runners)
+    - [Creating actions](#creating-actions)
+    - [GitHub Actions API](#github-actions-api)
   - [Dependencies](#dependencies)
   - [Common CI/CD Actions](#common-cicd-actions)
   - [Samples](#samples)
@@ -29,15 +29,15 @@
 - [MSFT Learn Path: Automate your workflow with GitHub Actions](https://learn.microsoft.com/en-us/training/paths/automate-workflow-github-actions/)
 - [GitHub Actions documentation](https://docs.github.com/en/actions)
 
-### Specific
-#### Learn GitHub Actions
+## Most relevant sections
+### Learn GitHub Actions
 - [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
 - [Essential features of GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions)
 - [Contexts](https://docs.github.com/en/actions/learn-github-actions/contexts)
 - [Variables](https://docs.github.com/en/actions/learn-github-actions/variables)
 - [Usage limits, billing, and administration](https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration)
 
-#### Using Workflows
+### Using Workflows
 - [Disabling and enabling a workflow](https://docs.github.com/en/actions/using-workflows/disabling-and-enabling-a-workflow)
 - [Events that trigger workflows](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
 - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
@@ -45,25 +45,25 @@
 - [Storing workflow data as artifacts](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts)
 - [Sharing workflows, secrets, and runners with your organization](https://docs.github.com/en/actions/using-workflows/sharing-workflows-secrets-and-runners-with-your-organization)
 
-#### Build and test
+### Build and test
 - [About continuous integration](https://docs.github.com/en/actions/automating-builds-and-tests/about-continuous-integration)
 
-#### Deployment - Target different environments
+### Deployment - Target different environments
 - [Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)
 
-#### Monitor & troubleshoot
+### Monitor & troubleshoot
 - [Adding a workflow status badge](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge)
 - [Using workflow run logs](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs)
 - [Enabling debug logging](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/enabling-debug-logging)
 
-#### GitHub and Self-hosted runners
+### GitHub and Self-hosted runners
 - [About GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners)
 - [About self-hosted runners](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners)
 
-#### Creating actions
+### Creating actions
 - [Metadata syntax for GitHub Actions](https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions)
 
-#### GitHub Actions API
+### GitHub Actions API
 - [GitHub REST API](https://docs.github.com/en/rest?apiVersion=2022-11-28)
 - [GitHub REST API - Actions artifacts](https://docs.github.com/en/rest/actions/artifacts?apiVersion=2022-11-28)
 - [GitHub REST API - Workflow runs](https://docs.github.com/en/rest/actions/workflow-runs?apiVersion=2022-11-28)
