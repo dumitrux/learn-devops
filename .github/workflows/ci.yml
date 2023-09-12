@@ -1,17 +1,24 @@
-name: Say hello
-
+name: ci 
 on:
-  workflow_dispatch:
-  # push:
-  #   branches: [main]
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
 
 jobs:
-  hello_world:
-    runs-on: ubuntu-18.04
+  deploy:
+    runs-on: ubuntu-latest
     steps:
-      - name: Echo the message
-        run: |
-          echo "Hello world"
-      - name: Dime la fecha
-        run: date
-      - run: ls -l
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - uses: actions/cache@v2
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+      - run: pip install mkdocs-material
+      - run: pip install pillow cairosvg
+      - run: mkdocs gh-deploy --force
