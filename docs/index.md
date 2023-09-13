@@ -1,8 +1,22 @@
 # DevOps Cheat sheets
+DevOps is a set of practices, tools, and a cultural philosophy that automate and integrate the processes between software development and IT teams.
+
 DevOps is a methodology that promotes collaboration and automation between development (Dev) and IT operations (Ops) teams. It aims to streamline software development and delivery, automate repetitive tasks, and enhance code quality through continuous integration, continuous delivery, and cultural shifts, ultimately resulting in faster, more reliable software releases.
 
+
 References:
-- [Understanding DevOps](https://www.redhat.com/en/topics/devops)
+- [RedHat - Understanding DevOps](https://www.redhat.com/en/topics/devops)
+- [Altassian - What Is DevOps?](https://www.atlassian.com/devops)
+
+**DevOps lifecycle**
+1. Plan
+2. Code
+3. Build
+4. Test
+5. Release
+6. Deploy
+7. Operate
+8. Monitor
 
 ## Source control
 - Git
@@ -23,6 +37,12 @@ Tools:
 
 References:
 - [RedHat - What is CI/CD?](https://www.redhat.com/en/topics/devops/what-is-ci-cd)
+
+### CI
+- Linting
+- Security
+- Testing
+
 
 ## Containers :fontawesome-solid-docker:
 - Docker
@@ -47,6 +67,26 @@ References:
 ## Cloud Computing :fontawesome-solid-cloud:
 - Azure
 - AWS
+
+## Documentation
+- MkDocs
+- Jekyll
+
+## Security
+- Checkov
+- CodeQL
+- HashiCorp Vault
+
+## Monitoring
+- Graphana
+- Prometheus
+- ELK Stack
+
+## Testing
+
+
+## Linting
+
 
 <!-- :smile:  -->
 <!-- :fontawesome-regular-face-laugh-wink: -->

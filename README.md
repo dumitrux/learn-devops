@@ -15,6 +15,7 @@ DevOps Engineer | Cloud Engineer | Site Reliability Engineer | Platform Engineer
 - Testing
 - IDEs
 - Operating systems
+- Documentation
 
 ---
 
