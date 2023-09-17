@@ -18,6 +18,8 @@ copyright: Copyright &copy; 2023 Marian-Dumitru Danci
 theme:
   name: material
   features:
+    - content.action.edit
+    - content.action.view
     - content.code.annotation
     - content.code.copy
     - content.tabs.link
@@ -102,5 +104,12 @@ markdown_extensions:
   - pymdownx.superfences
 
 # Page tree
-# nav:
-#   - Home: index.md
+nav:
+  - Home: index.md
+  - Terraform: terraform.md
+  - Command line:
+    - Bash: bash.md
+    - PowerShell: powershell.md
+  # - Setup:
+  #   - setup/index.md
+  #   - Changing the colors: setup/changing-the-colors.md

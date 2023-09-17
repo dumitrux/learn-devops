@@ -67,6 +67,7 @@ References:
 ## Cloud Computing :fontawesome-solid-cloud:
 - Azure
 - AWS
+- GCP
 
 ## Documentation
 - MkDocs
