@@ -3,8 +3,8 @@ DevOps is a set of practices, tools, and a cultural philosophy that automate and
 
 DevOps is a methodology that promotes collaboration and automation between development (Dev) and IT operations (Ops) teams. It aims to streamline software development and delivery, automate repetitive tasks, and enhance code quality through continuous integration, continuous delivery, and cultural shifts, ultimately resulting in faster, more reliable software releases.
 
-
 References:
+
 - [RedHat - Understanding DevOps](https://www.redhat.com/en/topics/devops)
 - [Altassian - What Is DevOps?](https://www.atlassian.com/devops)
 
@@ -18,14 +18,16 @@ References:
 7. Operate
 8. Monitor
 
+
 ## Source control
 - Git
 
 ## Command line
 
 Tools:
-- [Bash](./bash.md)
-- [PowerShell](./powershell.md)
+
+- [:fontawesome-solid-file-code: Bash](./bash.md) 
+- [:fontawesome-solid-file-code: PowerShell](./powershell.md)
 
 References:
 
@@ -33,9 +35,11 @@ References:
 Continuous Integration and Continuous Delivery (CI/CD) is the method to frequently deliver apps to customers by introducing automation into the stages of app development.
 
 Tools:
-- [GitHub Actions](./github-actions.md)
+
+- [:fontawesome-solid-file-code: GitHub Actions](./github-actions.md)
 
 References:
+
 - [RedHat - What is CI/CD?](https://www.redhat.com/en/topics/devops/what-is-ci-cd)
 
 ### CI
@@ -54,9 +58,11 @@ References:
 Infrastructure as Code (IaC) is the managing and provisioning of infrastructure through code instead of through manual processes.
 
 Tools:
-- [Terraform](./terraform.md)
+
+- [:fontawesome-solid-file-code: Terraform](./terraform.md)
 
 References:
+
 - [RedHat - What is Infrastructure as Code (IaC)?](https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac)
 
 ## Configuration as Code
@@ -93,3 +99,7 @@ References:
 <!-- :fontawesome-regular-face-laugh-wink: -->
 <!-- :octicons-copilot-24:{ .copilot } -->
 <!-- :fontawesome-brands-github:{ .github } -->
+
+## Know more
+
+- [GitHub - Libre DevOps](https://github.com/libre-devops)

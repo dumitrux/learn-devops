@@ -17,14 +17,17 @@ copyright: Copyright &copy; 2023 Marian-Dumitru Danci
 # Configuration
 theme:
   name: material
+  logo: assets/images/devops.png
   features:
     - content.action.edit
     - content.action.view
     - content.code.annotation
     - content.code.copy
     - content.tabs.link
+    - navigation.path
     - navigation.sections
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.top
     - navigation.tracking
     - search.highlight
@@ -60,9 +63,9 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/favicon.ico
+  favicon: assets/images/favicon.ico
   icon:
-    logo: logo      
+    logo: logo
 
 # Plugins
 plugins:
@@ -106,7 +109,7 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - Terraform: terraform.md
+  - IaC: terraform.md
   - Command line:
     - Bash: bash.md
     - PowerShell: powershell.md

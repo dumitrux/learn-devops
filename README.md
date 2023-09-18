@@ -2,7 +2,7 @@
 DevOps Engineer | Cloud Engineer | Site Reliability Engineer | Platform Engineer
 
 
-[dumitrux.github.io/learn-devops](dumitrux.github.io/learn-devops)
+[dumitrux.github.io/learn-devops](https://dumitrux.github.io/learn-devops)
 - Source control
 - Command line
 - CI/CD
