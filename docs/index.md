@@ -51,8 +51,8 @@ References:
 ## Containers :fontawesome-solid-docker:
 - Docker
 
-## Containers orchestation
-- Kubernetes
+### Containers orchestation
+- [Kubernetes](./kubernetes.md)
 
 ## Infrastructure as Code
 Infrastructure as Code (IaC) is the managing and provisioning of infrastructure through code instead of through manual processes.
