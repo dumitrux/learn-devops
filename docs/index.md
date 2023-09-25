@@ -20,7 +20,7 @@ References:
 
 
 ## Source control
-- Git
+- [:fontawesome-solid-file-code: Git](./git.md)
 
 ## Command line
 
@@ -49,10 +49,10 @@ References:
 
 
 ## Containers :fontawesome-solid-docker:
-- [Docker](./docker.md)
+- [:fontawesome-solid-file-code: Docker](./docker.md)
 
 ### Containers orchestation
-- [Kubernetes](./kubernetes.md)
+- [:fontawesome-solid-file-code: Kubernetes](./kubernetes.md)
 
 ## Infrastructure as Code
 Infrastructure as Code (IaC) is the managing and provisioning of infrastructure through code instead of through manual processes.
