@@ -1,211 +1,199 @@
 # Git
-Useful links:
-- https://learngitbranching.js.org/
-- https://www.atlassian.com/git/tutorials
-- https://adamcod.es/2014/12/10/git-pull-correct-workflow.html
-- http://gitimmersion.com/lab_01.html
 
+## Useful resources:
+- [Git official documentation](https://git-scm.com/docs)
+- [GitHub Cheat Sheet](https://training.github.com/)
+- [Learn Git Branching interactively](https://learngitbranching.js.org)
+- [Altassian Git tutorials](https://www.atlassian.com/git/tutorials)
+- [Git Immersion](http://gitimmersion.com)
 
-- `git stash`: To undo the local changes you have. Discard all local changes, but save them for possible re-use later:
+## Configure
+Set up user information for all your local repositories.
+- `git config --global user.name  “[name]”`: Specify the name associated with your commit transactions.
+- `git config --global user.name`: View the currently configured name.
+- `git config --global user.email “[email]”`: Define the email address linked to your commit transactions, which will be made public.
+- `git config --global user.email`: View the currently configured email address.
+- `git config --global color.ui true`: Enable helpful colorization of command-line output.
+- `git config --global --list`: visplay the current configuration settings.
+- `git help`: Provide information on how Git functions, or specify a command for detailed help.
 
-## Configurar herramientas
-Configura la información del usuario para todos los respositorios locales.
-- `git config --global user.name  “[name]”`: Establece el nombre que desea esté anexado a sus transacciones de commit.
-- `git config --global user.name`: para ver nombre especificado
-- `git config --global user.email “[email]”`: Establece el e-mail que desea esté anexado a sus transacciones de commit, que será publico.
-- `git config --global user.email`: para ver el email especificado
-- `git config --global color.ui true`: Habilita la útil colorización del producto de la línea de comando.
-- `git config --global --list`: ver las configuraciones hechas
-- `git help`: muestra como funciona git, o si se especifica, un comando
+## Create Repositories
+Initiate a new repository or retrieve one from an existing URL.
+- `git init`: Commence a project and have Git start monitoring it.
+- `git init [project-name]`: Establish a new local repository with the given name.
+- `git clone [url]`: Download a project along with its complete version history.
 
-## Crear repositorios
-Inicia un nuevo repositorio u obtiene uno de una URL existente
-- `git init`: marca inicio proyecto, git empieza a monitorear.
-- `git init [project-name]`: Crea un nuevo repositorio local con el nombre especificado.
-- `git clone [url]`: Descarga un proyecto y toda su historia de versión
+## Stage Changes
+Review modifications and prepare them for a commit transaction.
+- `git status`: List all new or altered files that need to be committed.
+- `git diff`: Display file differences that have not been staged yet.
+- `git add [file]`: Snapshot the file to prepare it for versioning.
+- `git add -A`: : Add all files.
+- `git diff --staged`: Exhibit file differences between the staging area and the latest version.
+- `git reset [file]`: Unstage the file while preserving its contents.
+- `git commit -m "[descriptive message]"`: Permanently record file snapshots in the version history.
+- `git commit`: Open the default text editor for writing the commit message.
 
-## Estructura cambios
-Revisa las ediciones y elabora una transacción de commit
-- `git status`: Enumera todos los archivos nuevos o modificados que se deben confirmar.
-- `git diff`: Muestra las diferencias de archivos que no se han enviado aún al
-- área de espera
-- `git add [file]`: Toma una instantánea del archivo para preparar la versión
-- `git add -A`:  agrega todos los archivos.
-- `git diff --staged`: Muestra las diferencias del archivo entre el área de espera y la última versión del archivo
-- `git reset [file]`: Mueve el archivo del área de espera, pero preserva su contenido
-- `git commit -m "[descriptive message]"`: Registra las instantáneas del archivo permanentemente en el historial de versión
-- `git commit`: abre editor predeterminado para escribir el commit
+## Group Changes
+Name a series of commits and combine completed efforts.
 
-## Cambios grupales
-Nombra una serie de commits y combina esfuerzos ya culminados
-- `git branch`: Enumera todas las ramas en el repositorio actual
-- `git branch [branch-name]`: Crea una nueva rama
-- `git checkout [branch-name]`: Cambia a la rama especificada y actualiza el directorio activo
-- `git merge [branch]`: Combina el historial de la rama especificada con la rama actual
-- `git branch -d [branch-name]`: Borra la rama especificada
-- `git push -u origin [branch-name]`: Push your branch to the remote repository
+- `git branch`: List all branches in the current repository.
+- `git branch [branch-name]`: Create a new branch.
+- `git checkout [branch-name]`: Switch to the specified branch and update the active directory.
+- `git merge [branch]`: Combine the history of the specified branch with the current branch.
+- `git branch -d [branch-name]`: Delete the specified branch.
+- `git push -u origin [branch-name]`: Push your branch to the remote repository.
 
-## Nombres del archivo de refactorización
-Reubica y retira los archivos con versión
+## Rename File Refactoring
+Relocate and remove versioned files.
+- `git rm --cached [file]`: Remove the file from version control, but keep it locally.
+- `git rm [file]`: Delete the file from the working directory and stage the deletion.
+- `git mv [file-original] [file-renamed]`: Rename the file and stage it for commit.
 
-- `git rm --cached [file]`: Retira el archivo del control de versiones, pero preserva el archivo a nivel local
-- `git rm [file]`: Borra el archivo del directorio activo y pone en el área de espera el archivo borrado
-- `git mv [file-original] [file-renamed]`: Cambia el nombre del archivo y lo prepara para commit
+## Suppress Tracking
+Exclude temporary files and paths. Adding an entry to the `.gitignore` file in the root directory.
+- `git ls-files --other --ignored --exclude-standard`: List all ignored files in this project
 
-## Suprimir tracking
-Excluye los archivos temporales y las rutas
+## Save Stashes
+Store and recover incomplete changes.
+- `git stash`: Temporarily preserve all modified tracked files.
+- `git stash list`: List all sets of saved changes.
+- `git stash pop`: Apply the most recently saved changes.
+- `git stash drop`: Discard the most recently saved set of changes.
 
-*.log 
-build/
-temp-* 
-Un archivo de texto llamado .gitignore suprime la creación accidental de versiones de archivos y rutas que concuerdan con los patrones especificados
+## Review History
+Navigate through and inspect the evolution of project files.
+- `git log`: List the version history for the current branch.
+- `git log --follow [file]`: List the version history for the file, including renames.
+- `git diff [first-branch]...[second-branch]`: Show content differences between two branches.
+- `git show [commit]`: Display metadata and content changes for the specified commit.
 
-- `git ls-files --other --ignored --exclude-standard`: Enumera todos los archivos ignorados en este proyecto
+## Redo Commits
+Undo errors and craft a replacement history.
+- `git reset [commit]`: Reverse all commits made after [commit], while preserving changes locally.
+- `git reset --hard [commit]`: Discard the entire history and return to the specified commit.
 
-## Guardar fragmentos
-Almacena y restaura cambios incompletos
-- `git stash`: Almacena temporalmente todos los archivos tracked modificados
-- `git stash list`: Enumera todos los sets de cambios en guardado rápido
-- `git stash pop`: Restaura los archivos guardados más recientemente
-- `git stash drop`: Elimina el set de cambios en guardado rápido más reciente
+## Sync Changes
+Register a repository bookmark and exchange version history.
+- `git fetch [bookmark]`: Download the entire history from the repository bookmark.
+- `git merge [bookmark]/[branch]`: Combine the bookmarked branch with the current local branch.
+- `git push [alias] [branch]`: Upload all commits from the local branch to GitHub.
+- `git pull`: Download the bookmarked history and incorporate changes.
 
-## Repasar historial
-Navega e inspecciona la evolución de los archivos de proyecto
-- `git log`: Enumera el historial de la versión para la rama actual
-- `git log --follow [file]`: Enumera el historial de versión para el archivo, incluidos los cambios de nombre
-- `git diff [first-branch]...[second-branch]`: Muestra las diferencias de contenido entre dos ramas
-- `git show [commit]`: Produce metadatos y cambios de contenido del commit especificado
+## First Project
+- `git log`: List all commits along with their respective information.
+  - `git log > commits.txt`: Create a file with the content of git log.
+- `git checkout 'commit code'`: Navigate between commits and branches. Using 'master' instead of the code moves to the latest commit.
+- `git reset`: Similar to checkout, but it removes commits.
+  - `git reset --soft 'commit code'`: Delete a commit without affecting the working area (no impact on the code).
+  - `git reset --mixed`: Clear the staging area without affecting the working area.
+  - `git reset --hard`: Discard everything in the commit.
 
-## Rehacer commits
-Borra errores y elabora historial de reemplazo
-- `git reset [commit]`: Deshace todos los commits después de [commit], preservando los cambios localmente
-- `git reset --hard [commit]`: Desecha todo el historial y regresa al commit especificado
+## Branches and Merges
+- **Head**: The commit you are currently on.
+- **Branches**: The project's timeline. When you create a new branch, it inherits from the previous one (usually Master), and from that point onwards, commits are only saved to this branch.
+  - Master Branch: Created by default when using git init, this is where commits are made.
+- `git branch`: Show all branches.
+- `git branch 'Branch Name'`: Create a new branch from Head.
+- `git checkout 'Branch Name'`: Besides navigating between commits, it also allows you to switch between branches.
+- `git checkout -b 'Branch Name'`: Create a branch and switch to it.
+- `git branch -D 'Branch Name'`: Delete a branch.
+- `git merge 'Branch Name'`: The selected branch is absorbed by the current branch.
+- `git branch -a`: Show all branches, including hidden ones.
 
-## Sincronizar cambios
-Registrar un marcador de repositorio e intercambiar historial de versión
-- `git fetch [bookmark]`: Descarga todo el historial del marcador del repositorio
-- `git merge [bookmark]/[branch]`: Combina la rama del marcador con la rama local actual
-- `git push [alias] [branch]`: Carga todos los commits de la rama local al GitHub
-- `git pull`: Descarga el historial del marcador e incorpora cambios
-
-## Primer proyecto
-- `git log`: da una lista de todos los commits con su respectiva información
-    - `git log > commits.txt`: crea fichero con el contenido de hacer git log
-- `git checkout ‘codigo dado en git log’`: se puede viajar entre commits y ramas, si en lugar del codigo ponemos ‘master’ se mueve al últino commit
-- `git reset`: similar a checkout, pero este elimina los commits
-    - `git reset --soft ‘codigo dado en git log’`: borra commit, no toca workingarea(no toca el codigo)
-    - `git reset --mixed`: borra stagingarea y no toca working area
-    - `git reset --hard`: borra absolutamente todo lo que hay en el commit
-      
-
-## Ramas y fusiones
-- Head: commit donde nos encontramos en ese momento
-- Ramas: linea del tiempo en el proyecto. Cuando creamos nueva rama hereda lo que teníamos en la anterior (Master) y a partir de ese momento los cambios (commits) solo se guarda en esta rama
-    - Rama Master:  cuando hacemos git init se crea por defecto, rama donde generamos commits
-- `git branch`: muestra ramas
-- `git branch ‘Nombre rama’`: crea nueva rama a partir de head
-- `git checkout ‘Nombre rama’`: a parte de servir para moverse entre commits, también permite moverse entre ramas
-- `git checkout -b ‘Nombre rama’`: crea rama y se mueve a ella
-- `git branch -D ‘Nombre rama’`: borra una rama
-- `git merge ‘Nombre rama’`: la rama que seleccionamos la absorbe la rama en que nos encontramos
-- `git branch -a`: muestra todas las ramas incluidas las ramas ocultas
-
-## Gestor de repositorios (GitHub, GitLab, etc)
-- `git remote`: vincula proyecto local con proyecto remoto
+## Repository Managers (GitHub, GitLab, etc.)
+- `git remote`: Link the local project to a remote project.
 - `git remote add origin ‘https’`:
-- `git remote -v`: comrpobamos enlace
-- `git remote remove origin`: quita vinculación
-- `git push`: manda cambios (commits) de pc a github
-- `git push origin master`: subimos rama master
-- `git push origin ‘Nombre rama’`: subimos rama y se crea nueva rama en github
+- `git remote -v`: Confirm the link.
+- `git remote remove origin`: Remove the link.
+- `git push`: Send changes (commits) from your PC to GitHub.
+- `git push origin master`: Upload the master branch.
+- `git push origin 'Branch Name'`: Upload a branch, creating a new one on GitHub.
 
-## Github
-- Issues: consejos, comentarios a otros, cosas que arreglar en el propio código, etc
-- Milestones: grupos de issues que aplican para un proyecto, característica o periodo de tiempo
-- Labels: una manera de organizar diferentes tipos de problemas, etiquetas de tipos de problemas
+## GitHub
+- **Issues**: Suggestions, comments to others, things to fix in your own code, etc.
+- **Milestones**: Groups of issues that apply to a project, feature, or time period.
+- **Labels**: A way to categorize different types of issues based on their problem type.
 
 ## Tags
-- Tags(etiquetas): puntos específicos en la historia de nuestro proyecto y se usan para marcar alguna versión del mismo
-- `git commit –amend -m “Nuevo nombre del commit”`: cambio nombre del commit actual
-- `git push origin master -f `: fuerza a que se suban cambios, ya que aunque no haya cambios de código pero sí de commits
-- `git tag -a v1.0 -m “Mensaje”`: tags anotadas, son almacenadas como objetos completos dentro de la base de Git y contiene más información, la versión la podemos elegir a gusto como v0.8 si se trata del commit 8, por ejemplo
-- `git tag v1.0 `: tags ligeras, son otra forma de crear tags, más simples y con poca información
-- `git tag -a v1.0 -m “Mensaje” ‘SHA’`: al agregar el código SHA podemos especificar donde se va aplicar una etiqueta
-- `git push origin v1.0`: la versión que seleccionemos de las que tengamos
-- `git push origin –tags`: sube todos los tags
-- `git show v1.0`:muestra la información sobre esa versión
-
+- Tags: Specific points in your project's history used to mark a certain version.
+- `git commit --amend -m "New commit name"`: Changes the name of the current commit.
+- `git push origin master -f`: Forces the push to upload changes even if there are no code changes but there are new commits.
+- `git tag -a v1.0 -m "Message"`: Annotated tags, stored as complete objects within Git and contain more information. The version can be chosen as desired, such as v0.8 for the 8th commit, for example.
+- `git tag v1.0`: Lightweight tags, a simpler way to create tags with less information.
+- `git tag -a v1.0 -m "Message" '[SHA]'`: By adding the SHA code, you can specify where the tag will be applied.
+- `git push origin v1.0`: Pushes the selected version of the tags.
+- `git push origin --tags`: Uploads all tags.
+- `git show v1.0`: Displays information about that version.
 
 ## Workflows
-- workflow: flujo de trabajo con proyectos propios, en equipo o con terceros. 
+- **Workflow**: A workflow for managing your own projects, working in teams, or with third parties.
+The above information covers personal projects. The following information is about team projects (organizations):
 
-Lo anterior era todo de proyectos propios lo siguiente es de proyectos en equipo (organizaciones) :
-- `git fetch origin`: pone cambios de repositorio remoto a origin/master
-- `git merge origin/master`: fusiona, absorbe rama origin/master a rama que estemos
-    - fast-forward: los cambios no entran en conflicto
-    - auto-merging: los cambios entran en conflicto con los cambios que otra persona del grupo ha realizado
-- `git push origin master `: sube cambios
+- `git fetch origin`: Fetches changes from the remote repository to origin/master.
+- `git merge origin/master`: Merges origin/master branch into the current branch.
+  - Fast-forward: Changes do not conflict.
+  - Auto-merging: Changes conflict with changes made by others in the group.
+- `git push origin master`: Uploads changes.
 
+For projects with third parties, where you are not an owner or collaborator but want to participate:
+- **Fork**: Clones the original or main repository, unlike Git. Now you'll have one more hidden branch. In addition to 'origin,' you will have 'upstream' (there may be more; check with `git branch -a`), 'upstream/master,' and 'origin/master.' Fork when you want to contribute to the code.
+- 
+First, fork the project on GitHub, then download the project from your fork's https, edit it.
 
-Proyecto con terceros, no somos dueños ni colaboradores, pero queremos participar:
-- Fork: hace clon del repositorio original o principal, a diferencia de git. Ahora vamos a tener una rama oculta más, a parte de origin tendremos upstream(pueden haber más mirarlo con git branch -a), upstream/master y origin/master. Clone más para ver proyecto o si se necesita código, cuando hacemos fork es cuando queremos participar en el código.
-
-Primero se hace fork en github del proyecto, se baja proyecto desde el https de nuestro fork, editamos.
 - `git fetch upstream`
 - `git fetch origin`
 
-## Github pages
-Sitios web para nosotros y nuestros proyectos, se puede generar web a partir de nuestra organización o proyecto.
+## GitHub Pages
+Websites for you and your projects. You can generate a website from your organization or project.
 
-Para nosotros:
-1. Crear repositorio nombreusuario.github.io
-2. git clone
-3. Se crea código web
-4. Se sube cambios a github(git push…)
+For your user:
+1. Create a repository named username.github.io.
+2. `git clone` it.
+3. Create web code.
+4. Upload changes to GitHub (`git push...`).
+Once done, you'll have the domain: username.github.io. Whatever you have in the repository is what will appear on the domain.
 
-Una vez hecho esto tenemos el dominio: nombreusuario.github.io Lo que tengamos el el repositorio es lo que tendremos en el dominio.
-
-Para proyecto:
-1. Creamos repositorio
-2. `git clone` + `git branch gh-pages`
-3. Se crea código web
-4. Se sube cambios a github(`git push…`)
-Todo lo que este en la rama gh-pages es lo que aparecera en nuestro dominio. Se crea dominio en: nombreusuario/comunidad.github.io/nombrerepositorio 
+For a project:
+1. Create a repository.
+2. `git clone` it and create a 'gh-pages' branch (git branch gh-pages).
+3. Create web code.
+4. Upload changes to GitHub (`git push...`). Everything in the 'gh-pages' branch will be on your domain: username.github.io/repositoryname.
 
 ## Deployment
-Solo si se tiene servidor contratado.
-SSH, sirve para conectarse fácilmente a un servidor o servidores, sin tener que poner una contraseña a cada momento.
+Only if you have a server. SSH allows easy connection to a server or servers without entering a password each time.
 
-Con ssh-keygen, generamos llave pública y privada.
-Para conectarse al servidor ssh root@dominio.com, dominio o IP en caso de no tener dominio aún.
-  
-`git pull`: `git fetch` + `git merge`
+With ssh-keygen, you generate a public and private key pair.
+To connect to the server ssh root@domain.com, with the domain or IP if you don't have a domain yet.
+
+`git pull`: Equivalent to `git fetch` + `git merge`.
 
 ## Hooks
-Mecanismos para activar scripts, cuando suceden ciertas acciones.  
-- post-commits, cuando se ejecute `git commit -m “Mensaje”` se ejecutara unos comandos automáticamente para obtener un resultado.
-- pos-checkout
+Mechanisms to trigger scripts when certain actions occur.
+- post-commits: Automatically execute commands when git commit -m "Message" is executed.
+- post-checkout
 - post-merge
 - post-rewrite
 
-En .git se encuentra carpet hooks y dentro ya tenemos algunos hooks ya creados. Para crear un hook hacemos, por ejemplo, touch post-commit, y depués nano post-commit para poder escribir el contenido. 
+In the .git folder, you'll find a folder called 'hooks,' and inside, some pre-made hooks. To create a hook, for example, `touch post-commit`, then `nano post-commit` to write the content.
 
+Content:
+```shell
+#!/bin/sh  # Indicates it's a shell script
+git push origin branch-or-master
+ssh root@domain.com 'bash -s' < deployment.sh  # Connects to the server and executes the shell
+```
 
-Contenido:
-#!/bin/sh  (comentario que indica que es un shell script)
-`git push origin rama-o-master`
-shh root@dominio.com ‘bash -s’ < deployment.sh (se conecta servidor y ejecuta shell)
-
-Finalmente le damos privilegios al commit, chmod +x post-commit
-
-Ahora se crea deployment, touch deployment.sh
+Finally, give commit privileges: `chmod +x post-commit`.
+Now create a deployment file: `touch deployment.sh`.
 
 deployment.sh:
+```shell
 #!/bin/sh
-cd direccion (se mueve a la carpeta)
-`git pull origin rama-o-master`
-sudo service ghost restart (reinicia servidor, api ghost)
-
+cd directory  # Moves to the directory
+git pull origin branch-or-master
+sudo service ghost restart  # Restarts the server, Ghost API
+```
 
 ## Steps
 ```bash
@@ -215,106 +203,104 @@ git init
 # 2. Add changes
 git add -A
 
-# 3. Comprobamos archivos añadidos
+# 3. Check added files
 git status
 
-# 4. 
-git commit -m “Mensaje”
+# 4. Commit
+git commit -m "Message"
 
-# 5. Comprobamos commits
+# 5. Check commits
 git log
 
-# 6.
-git checkout ‘codigo sha’
+# 6. Checkout
+git checkout 'commit sha'
 
-# 7
+# 7. Checkout master
 git checkout master
 
-# 8.
-git reset --soft ‘codigo sha’
+# 8. Reset (soft)
+git reset --soft 'commit sha'
 
-# 9.
-git branch Rama
+# 9. Create branch
+git branch Branch
 
-# 10.
-git checkout Rama1
+# 10. Checkout branch
+git checkout Branch1
 
-# 11.
-11. Cambios en Rama1
+# 11. Make changes in Branch1
 
-# 12.
+# 12. Checkout master 
 git checkout master 
 
-# 13.estamos en master que es la rama que va absorber a Rama1
-git merge Rama1 
+# 13. We are on master, which is the branch that will absorb Branch1
+git merge Branch1 
 
-# 14. eliminamos Rama1
-git branch -D Rama1 ()
+# 14. Delete Branch1
+git branch -D Branch1
 
 # 15. GitHub
 
-# 16. Se crea repositorio en GitHub, carpeta y repositorio mejor que tengan el mismo nombre
+# 16. Create repository on GitHub, folder and repository better have the same name
 
-# 17.
-git remote add origin ‘encale https’
+# 17. Add remote origin
+git remote add origin 'https'
 
-# 18. para comprobar
+# 18. To check
 git remote -v
 
-# 19. Descarga, clona y actualiza
+# 19. Download, clone, and update
 git fetch origin
-git clone ‘encale https’ 
+git clone 'https' 
 git pull origin master
 
-# 20. para eliminar enlace entre carpeta y github, en caso de que se quiera
+# 20. To remove the link between the folder and GitHub, if needed
 git remote remove origin
 
-# 21. pasa de pc a github
+# 21. Push from PC to GitHub
 git push origin master
 
-# 22. subimos de pc a github solo rama
-git push origin Rama1
+# 22. Upload branch from PC to GitHub
+git push origin Branch1
 
-# 23. Para borrar rama en GitHub hay que hacerlo desde la página
+# 23. To delete a branch on GitHub, it must be done from the website
 
-# 24. Issue, milestones y labels desde GitHub, para 
+# 24. Issues, milestones, and labels from GitHub, to 
 
-# 25. Tags (etiquetas de versiones)
+# 25. Tags (version tags)
 
-# 26. commit numero 8
-git tag -a v0.8 -m “Version 0.8 de nuestro proyecto”
+# 26. Commit number 8
+git tag -a v0.8 -m "Version 0.8 of our project"
 
-# 27. codigo del segundo commit
-git tag -a v0.2 -m “Version 0.2 de nuestro proyecto” ‘cogigo sha’
+# 27. Code of the second commit
+git tag -a v0.2 -m "Version 0.2 of our project" 'commit sha'
 
-# 28.
-git push origin v0.8 (subimos tag a github)
+# 28. Push v0.8 to GitHub
+git push origin v0.8
 
 # 29. Workflows
 
-# 30. Comunidades
+# 30. Communities
 
-# 31. muestra ramas ocultas ‘remotes/origin/master’
+# 31. Show hidden branches 'remotes/origin/master'
 git branch -a
 
-# 32. subre a rama origin/master
+# 32. Fetch to upload to origin/master
 git fetch origin
 
-# 33.
-git merge  origin/master
+# 33. Merge origin/master
+git merge origin/master
 
-# 34. Proyectos con terceros (fork)
+# 34. Projects with third parties (fork)
 
-# 35. rama upstream/master es el repositorio original del cual se hace fork
+# 35. upstream/master branch is the original repository from which you fork
 git fetch upstream
 
-# 36. rama origin/master es nuestro repositorio, clon del original
+# 36. origin/master branch is your repository, a clone of the original
 git fetch origin
 
-# 37. Finalmente se hace en github new pull request
+# 37. Finally, create a new pull request on GitHub
 
-# 38. GitHub pages(se crea proyecto)
+# 38. GitHub Pages (create a project)
 
-# 39.
-git branch gh-pages
+# 39. Create 'gh-pages' branch
 ```
