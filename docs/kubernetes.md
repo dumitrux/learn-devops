@@ -1,6 +1,10 @@
-https://www.youtube.com/watch?v=d6WC5n9G_sM
+## Usefult resources:
+- [KodeKloud](https://kodekloud.com)
 
-https://github.com/bstashchuk/k8s
+# Example
+Based on the example
+- [freeCodeCamp - Kubernetes Course - Full Beginners Tutorial](https://www.youtube.com/watch?v=d6WC5n9G_sM)
+- [GitHub repository for the "Kubernetes for Beginners"](https://github.com/bstashchuk/k8s)
 
 ## 1 - Creating Kubernetes cluster using Minikube
 ### Create cluster
