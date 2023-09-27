@@ -43,10 +43,17 @@ References:
 - [RedHat - What is CI/CD?](https://www.redhat.com/en/topics/devops/what-is-ci-cd)
 
 ### CI
-- Linting
-- Security
-- Testing
+1. Automate the Build
+2. Introduce Automation test (units tests, integration, ...)
+3. Linting
+4. Security / Scanning
 
+Based on the workflow (like GitHub Flow > Git Flow) add Pull/Merge Request to be reviewed and approved by other collaborators.
+
+
+### CD
+- Environments: Dev -> Staging -> Prod
+- User feedback (Blue/Green, Canary, ...)
 
 ## Containers :fontawesome-solid-docker:
 - [:fontawesome-solid-file-code: Docker](./docker.md)
