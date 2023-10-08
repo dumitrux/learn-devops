@@ -9,6 +9,7 @@
 
 ## Configure
 Set up user information for all your local repositories.
+
 - `git config --global user.name  “[name]”`: Specify the name associated with your commit transactions.
 - `git config --global user.name`: View the currently configured name.
 - `git config --global user.email “[email]”`: Define the email address linked to your commit transactions, which will be made public.
@@ -19,12 +20,14 @@ Set up user information for all your local repositories.
 
 ## Create Repositories
 Initiate a new repository or retrieve one from an existing URL.
+
 - `git init`: Commence a project and have Git start monitoring it.
 - `git init [project-name]`: Establish a new local repository with the given name.
 - `git clone [url]`: Download a project along with its complete version history.
 
 ## Stage Changes
 Review modifications and prepare them for a commit transaction.
+
 - `git status`: List all new or altered files that need to be committed.
 - `git diff`: Display file differences that have not been staged yet.
 - `git add [file]`: Snapshot the file to prepare it for versioning.
@@ -46,6 +49,7 @@ Name a series of commits and combine completed efforts.
 
 ## Rename File Refactoring
 Relocate and remove versioned files.
+
 - `git rm --cached [file]`: Remove the file from version control, but keep it locally.
 - `git rm [file]`: Delete the file from the working directory and stage the deletion.
 - `git mv [file-original] [file-renamed]`: Rename the file and stage it for commit.
@@ -56,6 +60,7 @@ Exclude temporary files and paths. Adding an entry to the `.gitignore` file in t
 
 ## Save Stashes
 Store and recover incomplete changes.
+
 - `git stash`: Temporarily preserve all modified tracked files.
 - `git stash list`: List all sets of saved changes.
 - `git stash pop`: Apply the most recently saved changes.
@@ -63,6 +68,7 @@ Store and recover incomplete changes.
 
 ## Review History
 Navigate through and inspect the evolution of project files.
+
 - `git log`: List the version history for the current branch.
 - `git log --follow [file]`: List the version history for the file, including renames.
 - `git diff [first-branch]...[second-branch]`: Show content differences between two branches.
@@ -70,11 +76,13 @@ Navigate through and inspect the evolution of project files.
 
 ## Redo Commits
 Undo errors and craft a replacement history.
+
 - `git reset [commit]`: Reverse all commits made after [commit], while preserving changes locally.
 - `git reset --hard [commit]`: Discard the entire history and return to the specified commit.
 
 ## Sync Changes
 Register a repository bookmark and exchange version history.
+
 - `git fetch [bookmark]`: Download the entire history from the repository bookmark.
 - `git merge [bookmark]/[branch]`: Combine the bookmarked branch with the current local branch.
 - `git push [alias] [branch]`: Upload all commits from the local branch to GitHub.
@@ -92,7 +100,7 @@ Register a repository bookmark and exchange version history.
 ## Branches and Merges
 - **Head**: The commit you are currently on.
 - **Branches**: The project's timeline. When you create a new branch, it inherits from the previous one (usually Master), and from that point onwards, commits are only saved to this branch.
-  - Master Branch: Created by default when using git init, this is where commits are made.
+  - Main/Master Branch: Created by default when using git init, this is where commits are made.
 - `git branch`: Show all branches.
 - `git branch 'Branch Name'`: Create a new branch from Head.
 - `git checkout 'Branch Name'`: Besides navigating between commits, it also allows you to switch between branches.
