@@ -23,9 +23,9 @@ References:
 - [:fontawesome-solid-file-code: Git](./git.md)
 
 ## Command line
-
 Tools:
 
+- [:fontawesome-solid-file-code: Linux OS](./linux.md) 
 - [:fontawesome-solid-file-code: Bash](./bash.md) 
 - [:fontawesome-solid-file-code: PowerShell](./powershell.md)
 
