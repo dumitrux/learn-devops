@@ -102,11 +102,14 @@ References:
 ## Linting
 
 
-<!-- :smile:  -->
-<!-- :fontawesome-regular-face-laugh-wink: -->
-<!-- :octicons-copilot-24:{ .copilot } -->
-<!-- :fontawesome-brands-github:{ .github } -->
+## Miscellany
+- [:fontawesome-solid-file-code: Databricks](./databricks.md)
 
 ## Know more
 
 - [GitHub - Libre DevOps](https://github.com/libre-devops)
+
+<!-- :smile:  -->
+<!-- :fontawesome-regular-face-laugh-wink: -->
+<!-- :octicons-copilot-24:{ .copilot } -->
+<!-- :fontawesome-brands-github:{ .github } -->
