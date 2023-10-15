@@ -13,3 +13,8 @@
 
 
 ## Certifications
+
+
+# Code
+- [:fontawesome-solid-file-code: aztfexport example](../code/azure/aztfexport.md)
+- [:fontawesome-solid-file-code: R access Azure identity](../code/azure/access_azure_identity.R)
