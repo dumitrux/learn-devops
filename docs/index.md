@@ -37,7 +37,7 @@ Continuous Integration and Continuous Delivery (CI/CD) is the method to frequent
 Tools:
 
 - [:fontawesome-solid-file-code: GitHub Actions](./github-actions.md)
-- [GitHub Codespaces](./devcontainers.md)
+- [GitHub Codespaces](./github-codespaces.md)
 
 References:
 
