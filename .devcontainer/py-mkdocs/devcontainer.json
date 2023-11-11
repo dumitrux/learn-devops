@@ -14,4 +14,4 @@
             "plugins": "mkdocs-material,mkdocs-minify-plugin,mkdocs-search-plugin,mkdocs-social-plugin"
         }
     }
-  }
+}
