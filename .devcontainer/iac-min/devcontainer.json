@@ -10,6 +10,10 @@
 			"tflint": "latest", // 0.47.0
 			"terragrunt": "latest"
 		},
-		"ghcr.io/devcontainers-contrib/features/aztfexport:1": {}
+		"ghcr.io/devcontainers/features/azure-cli:1": {
+			"version": "latest",
+			"extensions": "ms-vscode.azurecli",
+			"installBicep": false
+		}
 	}
 }
