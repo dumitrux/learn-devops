@@ -9,9 +9,8 @@
         }
     },
     "features": {
-        "ghcr.io/devcontainers/features/python:1": {},
         "ghcr.io/devcontainers-contrib/features/mkdocs:2": {
-            "plugins": "mkdocs-material,mkdocs-minify-plugin,mkdocs-search-plugin,mkdocs-social-plugin"
+            "plugins": "mkdocs-material,minify,search,social"
         }
     }
 }

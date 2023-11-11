@@ -2,6 +2,15 @@
 	"name": "IaC Min",
 	"image": "mcr.microsoft.com/devcontainers/base:jammy",
 	"features": {
-		"ghcr.io/devcontainers/features/terraform:1": {}
+		"ghcr.io/devcontainers/features/terraform:1": {
+			"installSentinel": true,
+			"installTFsec": true,
+			"installTerraformDocs": true,
+			"version": "latest", // 1.1
+			"tflint": "latest", // 0.47.0
+			"terragrunt": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/checkov:1": {},
+		"ghcr.io/devcontainers-contrib/features/aztfexport:1": {}
 	}
 }
