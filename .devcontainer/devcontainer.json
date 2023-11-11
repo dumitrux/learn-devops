@@ -10,7 +10,7 @@
     },
     "features": {
         "ghcr.io/devcontainers-contrib/features/mkdocs:2": {
-            "plugins": "mkdocs-material,minify,search,social"
+            "plugins": "mkdocs-material,mkdocs-minify-plugin"
         }
     }
 }
