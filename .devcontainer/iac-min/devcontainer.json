@@ -10,6 +10,6 @@
 			"tflint": "latest", // 0.47.0
 			"terragrunt": "latest"
 		},
-		"ghcr.io/devcontainers-contrib/features/checkov:1": {}
+		"ghcr.io/devcontainers-contrib/features/aztfexport:1": {}
 	}
 }
