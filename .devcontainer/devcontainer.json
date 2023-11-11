@@ -9,6 +9,8 @@
         }
     },
     "features": {
-        "ghcr.io/devcontainers-contrib/features/mkdocs:2": {}
+        "ghcr.io/devcontainers-contrib/features/mkdocs:2": {
+            "plugins": "mkdocs-material"
+        }
     }
 }
