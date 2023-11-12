@@ -1,26 +1,24 @@
 {
-	"name": "IaC Min",
+	"name": "IaC Features",
 	"image": "mcr.microsoft.com/devcontainers/base:jammy",
 	"customizations": {
+		"codespaces": {
+			"openFiles": [
+				"README.md"
+			]
+		},
 		"vscode": {
 			"extensions": [
+				"esbenp.prettier-vscode",
 				"HashiCorp.terraform",
 				"mads-hartmann.bash-ide-vscode",
 				"ms-azuretools.vscode-azureterraform",
-				"ms-vscode.azurecli"
+				"ms-vscode.azurecli",
+				"tfsec.tfsec"
 			]
 		}
 	},
 	"features": {
-		"ghcr.io/devcontainers/features/common-utils:2": {
-			"installZsh": true,
-			"installOhMyZsh": true,
-			"installOhMyZshConfig": true,
-			"upgradePackages": true,
-			"username": "automatic",
-			"userUid": "automatic",
-			"userGid": "automatic"
-		},
 		"ghcr.io/devcontainers/features/azure-cli:1": {
 			"version": "latest"
 		},
@@ -38,20 +36,16 @@
 		"ghcr.io/devcontainers-contrib/features/checkov:1": {
 			"version": "latest"
 		}
-
 		// Miscellany
 		// "ghcr.io/devcontainers/features/github-cli:1": {},
 		// "ghcr.io/devcontainers/features/sshd:1": {},
 		// "ghcr.io/devcontainers-contrib/features/ansible:2": {},
-		
 		// Scripting languages
 		// "ghcr.io/devcontainers/features/powershell:1": {},
 		// "ghcr.io/devcontainers-contrib/features/bash-command:1": {},
-
 		// Programming languages
 		// "ghcr.io/devcontainers/features/go:1": {},
 		// "ghcr.io/devcontainers/features/python:1": {},
-
 		// OS Package managers
 		// "ghcr.io/devcontainers-contrib/features/apt-packages:1": {
 		// 	"packages": "curl,vim"
