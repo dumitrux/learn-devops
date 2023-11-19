@@ -1,14 +1,16 @@
 # DevOps Cheat sheets
+
 DevOps is a set of practices, tools, and a cultural philosophy that automate and integrate the processes between software development and IT teams.
 
 DevOps is a methodology that promotes collaboration and automation between development (Dev) and IT operations (Ops) teams. It aims to streamline software development and delivery, automate repetitive tasks, and enhance code quality through continuous integration, continuous delivery, and cultural shifts, ultimately resulting in faster, more reliable software releases.
 
-References:
+<!-- References:
 
 - [RedHat - Understanding DevOps](https://www.redhat.com/en/topics/devops)
-- [Altassian - What Is DevOps?](https://www.atlassian.com/devops)
+- [Altassian - What Is DevOps?](https://www.atlassian.com/devops) -->
 
-**DevOps lifecycle**
+## DevOps lifecycle
+
 1. Plan
 2. Code
 3. Build
@@ -18,32 +20,42 @@ References:
 7. Operate
 8. Monitor
 
+## IDEs / Editors
+
+- [:simple-visualstudiocode: Visual Studio Code](./vscode.md)
+- [:octicons-copilot-24: GitHub Copilot](./github-copilot.md)
 
 ## Source control
-- [:fontawesome-solid-file-code: Git](./git.md)
+
+- [:simple-git: Git](./git.md)
 
 ## Command line
-Tools:
 
-- [:fontawesome-solid-file-code: Linux OS](./linux.md) 
-- [:fontawesome-solid-file-code: Bash](./bash.md) 
-- [:fontawesome-solid-file-code: PowerShell](./powershell.md)
+- [:simple-linux: Linux OS](./linux.md)
+- [:simple-gnubash: Bash](./bash.md)
+- [:simple-powershell: PowerShell](./powershell.md)
+- [:simple-vim: Vim](./vim.md)
 
-References:
+## Programming languages
+
+- [:simple-python: Python](./python.md)
+- Go
+- .NET / ASP.NET
+- JavaScript
 
 ## CI/CD
+
 Continuous Integration and Continuous Delivery (CI/CD) is the method to frequently deliver apps to customers by introducing automation into the stages of app development.
 
-Tools:
+- [:simple-githubactions: GitHub Actions](./github-actions.md)
+- [:octicons-codespaces-16: GitHub Codespaces](./github-codespaces.md)
 
-- [:fontawesome-solid-file-code: GitHub Actions](./github-actions.md)
-- [GitHub Codespaces](./github-codespaces.md)
+<!-- References:
 
-References:
-
-- [RedHat - What is CI/CD?](https://www.redhat.com/en/topics/devops/what-is-ci-cd)
+- [RedHat - What is CI/CD?](https://www.redhat.com/en/topics/devops/what-is-ci-cd) -->
 
 ### CI
+
 1. Automate the Build
 2. Introduce Automation test (units tests, integration, ...)
 3. Linting
@@ -51,68 +63,73 @@ References:
 
 Based on the workflow (like GitHub Flow > Git Flow) add Pull/Merge Request to be reviewed and approved by other collaborators.
 
-
 ### CD
+
 - Environments: Dev -> Staging -> Prod
 - User feedback (Blue/Green, Canary, ...)
 
-## Containers :fontawesome-solid-docker:
-- [:fontawesome-solid-file-code: Docker](./docker.md)
+## Containers
+
+- [:simple-docker: Docker](./docker.md)
 
 ### Containers orchestation
-- [:fontawesome-solid-file-code: Kubernetes](./kubernetes.md)
+
+- [:simple-kubernetes: Kubernetes](./kubernetes.md)
 
 ## Infrastructure as Code
+
 Infrastructure as Code (IaC) is the managing and provisioning of infrastructure through code instead of through manual processes.
 
 Tools:
 
-- [:fontawesome-solid-file-code: Terraform](./terraform.md)
+- [:simple-terraform: Terraform](./terraform.md)
 
-References:
+<!-- References:
 
-- [RedHat - What is Infrastructure as Code (IaC)?](https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac)
+- [RedHat - What is Infrastructure as Code (IaC)?](https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac) -->
 
 ## Configuration as Code
-- Ansible
 
 Sometimes also called Software Configuration Management.
 
-## Networking :fontawesome-solid-network-wired:
+- [:simple-ansible: Ansible](./ansible.md)
 
-## Cloud Computing :fontawesome-solid-cloud:
-- Azure
+## Networking
+
+- [:fontawesome-solid-network-wired: CIDR](./networking.md)
+
+## Cloud Computing
+
+- [:simple-microsoftazure: Azure](./azure.md)
 - AWS
 - GCP
 
 ## Documentation
-- MkDocs
-- Jekyll
+
+- [:simple-materialformkdocs: MkDocs](./mkdocs.md)
+- [:simple-jekyll: Jekyll](./jekyll.md)
 
 ## Security
+
 - Checkov
 - CodeQL
 - HashiCorp Vault
 
 ## Monitoring
+
 - Graphana
 - Prometheus
 - ELK Stack
 
 ## Testing
 
-
 ## Linting
 
-
 ## Miscellany
-- [:fontawesome-solid-file-code: Databricks](./databricks.md)
+
+- [:simple-databricks: Databricks](./databricks.md)
 
 ## Know more
 
 - [GitHub - Libre DevOps](https://github.com/libre-devops)
-
-<!-- :smile:  -->
-<!-- :fontawesome-regular-face-laugh-wink: -->
-<!-- :octicons-copilot-24:{ .copilot } -->
-<!-- :fontawesome-brands-github:{ .github } -->
+- [GitHub - TL;DR DevOps](https://github.com/tldr-devops)

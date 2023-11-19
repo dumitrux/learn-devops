@@ -1,6 +1,9 @@
-# PowerShell 
+# PowerShell
+
 ## Scripts
+
 Iterate through files in a directory
+
 ```powershell
 Get-ChildItem "." -Filter *.log | 
 Foreach-Object {

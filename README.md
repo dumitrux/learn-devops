@@ -1,21 +1,52 @@
-# DevOps cheatsheets
-DevOps Engineer | Cloud Engineer | Site Reliability Engineer | Platform Engineer
+# TL;DR DevOps
+[dumitrux.github.io/tldr-devops](https://dumitrux.github.io/tldr-devops)
 
+TL;DR (too long; didn't read) simple explanation of DevOps practices and tools, focused on practical examples.
+For "DevOps Engineers", Cloud Engineers, Platform Engineer, Site Reliability Engineers, etc. 
 
-[dumitrux.github.io/learn-devops](https://dumitrux.github.io/learn-devops)
+1. [Plan](#plan)
+2. [Code](#code)
+3. [Build](#build)
+4. [Test](#test)
+5. [Release](#release)
+6. [Deploy](#deploy)
+7. [Operate](#operate)
+8. [Monitor](#monitor)
+
+## Plan
+- License
+- Agile methodologies
+
+## Code
 - Source control
 - Command line
-- CI/CD
-- Containers
-- Containers orchestation
 - Infrastructure as Code
 - Configuration as Code
+- IDEs (editors)
+- Programming languages (Python, Go, Rust)
+
+## Build
+- CI/CD
+
+## Test
+- Testing
+
+## Release
+
+## Deploy
 - Networking
 - Cloud Computing
-- Security
+
+## Operate
+
+## Monitor
 - Monitoring
-- Testing
-- IDEs
+
+
+
+- Containers
+- Containers orchestation
+- Security
 - Operating systems
 - Documentation
 
@@ -25,13 +56,10 @@ DevOps Engineer | Cloud Engineer | Site Reliability Engineer | Platform Engineer
 - Databases
 - Web servers
 - Messaging
-- Programming languages
 - Frameworks
-- Editors
 - Browsers
 - Virtualization
 - Miscellaneous
 - References
 - About
-- License
 - Contributing

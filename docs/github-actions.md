@@ -1,4 +1,5 @@
 # Learn GitHub Actions
+
 ## Registration
 - [GitHub Partner Certifications](https://examregistration.github.com/overview)
 - [GitHub Partner Certifications - Candidate Handbook](https://examregistration.github.com/handbook#certification-process-overview)
