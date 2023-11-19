@@ -11,7 +11,7 @@
     },
     "features": {
         "ghcr.io/devcontainers-contrib/features/mkdocs:2": {
-            "plugins": "mkdocs-material mkdocs-minify-plugin"
+            "plugins": "mkdocs-material mkdocs-minify-plugin mkdocs-glightbox"
         }
     }
 }
