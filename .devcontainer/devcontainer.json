@@ -1,4 +1,5 @@
 {
+    "name": "MkDocs",
     "image": "mcr.microsoft.com/devcontainers/universal:2",
     "customizations": {
         "vscode": {
@@ -10,7 +11,7 @@
     },
     "features": {
         "ghcr.io/devcontainers-contrib/features/mkdocs:2": {
-            "plugins": "mkdocs-material"
+            "plugins": "mkdocs-material mkdocs-minify-plugin"
         }
     }
 }
