@@ -35,7 +35,11 @@
 		},
 		"ghcr.io/devcontainers-contrib/features/checkov:1": {
 			"version": "latest"
-		}
+		},
+"ghcr.io/devcontainers-contrib/features/pre-commit:2": {
+   "version": "latest"
+}
+
 		// Miscellany
 		// "ghcr.io/devcontainers/features/github-cli:1": {},
 		// "ghcr.io/devcontainers/features/sshd:1": {},

@@ -76,6 +76,8 @@ References:
 ## Configuration as Code
 - Ansible
 
+Sometimes also called Software Configuration Management.
+
 ## Networking :fontawesome-solid-network-wired:
 
 ## Cloud Computing :fontawesome-solid-cloud:
