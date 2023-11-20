@@ -126,12 +126,38 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - MkDocs: mkdocs.md
-  - VSCode: vscode.md
-  - Terraform: terraform.md
+  - IDE:
+    - VSCode: vscode.md
+  - Source Control:
+    - Git: git.md
   - Command line:
+    - Linux: linux.md
     - Bash: bash.md
+    - Vim: vim.md
     - PowerShell: powershell.md
+  - Programming languages:
+    - Python: python.md
+  - CI/CD:
+    - GitHub Actions: cicd/github-actions.md
+    - GitHub Codespaces: github-codespaces.md
+  - Containers:
+    - Docker: containers/docker.md
+    - Kubernetes: containers/kubernetes.md
+  - IaC:
+    - Terraform: terraform.md
+  - CaC:
+    - Ansible: ansible.md
+  - Networking:
+    - CIDR: networking.md
+  - Cloud Computing:
+    - Azure: azure.md
+  - Documentation:
+    - MkDocs: documentation/mkdocs.md
+    - Jekyll: documentation/jekyll.md
+  - Miscellany:
+    - Databricks: databricks.md
+
+
   # - Setup:
   #   - setup/index.md
   #   - Changing the colors: setup/changing-the-colors.md
