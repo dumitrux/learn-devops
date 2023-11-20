@@ -1,4 +1,4 @@
-# Azure
+# :simple-microsoftazure: Azure
 
 ## Architecture
 

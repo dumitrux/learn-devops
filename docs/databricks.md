@@ -1,12 +1,14 @@
-# Databricks useful commands
+# :simple-databricks: Databricks useful commands
 
 ## Bash script in DevOps Release
+
 ```bash
 databricks_path="$(System.DefaultWorkingDirectory)/_<Repo_name>/databricks-scripts/"
 databricks_url="https://<databricks_id>.azuredatabricks.net"
 ```
 
 ## Get Azure AD tokens for the service principal
+
 ```bash
 access_token=$(curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
 https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/token \
@@ -18,6 +20,7 @@ https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/token \
 ```
 
 ## Use the service principal’s Azure AD access token to access the Databricks REST API
+
 ```bash
 curl -X POST \
 -H "Authorization: Bearer $access_token" \
@@ -27,6 +30,7 @@ $databricks_url/api/2.0/preview/scim/v2/ServicePrincipals \
 ```
 
 ## Create a cluster with the configuration in create-cluster.json
+
 ```bash
 curl -X POST \
 -H "Authorization: Bearer $access_token" \
@@ -35,6 +39,7 @@ $databricks_url/api/2.0/clusters/create \
 ```
 
 ## Upload the mount script into Databricks Shared workspace
+
 ```bash
 curl --request POST \
 -H "Authorization: Bearer $access_token" \
@@ -44,7 +49,8 @@ $databricks_url/api/2.0/workspace/import \
 --form content=@"$databricks_path/mount-dir.py.zip"
 ```
 
-## List the clusters to find the 
+## List the clusters to find a specific one
+
 ```bash
 cluster_id=$(curl -X GET \
 -H "Authorization: Bearer $access_token" \

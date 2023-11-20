@@ -1,16 +1,4 @@
-# :simple-visualstudiocode: Visual Studio Code <!-- omit in toc -->
-
-- [Extensions](#extensions)
-  - [Visualization](#visualization)
-  - [Programming and scripting languages](#programming-and-scripting-languages)
-  - [Copilot](#copilot)
-- [Containerization](#containerization)
-- [Documentation](#documentation)
-- [IaC](#iac)
-  - [Miscellany](#miscellany)
-- [Keyboard Shortcuts](#keyboard-shortcuts)
-- [References](#references)
-
+# :simple-visualstudiocode: Visual Studio Code
 
 ## Extensions
 
@@ -61,7 +49,10 @@
 
 ++ctrl+shift+"P"++
 
-The most important key combination to know, since it brings up the Command Palette. From here, you have access to all of the functionality of VS Code, including keyboard shortcuts for the most common operations. The Command Palette provides access to many commands.
+The most important key combination to know, since it brings up the Command Palette.
+From here, you have access to all of the functionality of VS Code,
+including keyboard shortcuts for the most common operations.
+The Command Palette provides access to many commands.
 
 ++ctrl+"P"++
 

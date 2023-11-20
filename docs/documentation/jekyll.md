@@ -1,5 +1,7 @@
-# Jekyll
+# :simple-jekyll: Jekyll
+
 ## Install
+
 ```bash
 sudo apt install ruby -y
 ruby -v
@@ -39,15 +41,15 @@ bundle exec jekyll serve
 ```
 
 ## Theme
+
 - [jekyll-gitbook](https://github.com/sighingnow/jekyll-gitbook)
 - [Jekyll Themes](https://jekyllrb.com/docs/themes/)
 
 ## Configuration
-https://jekyllrb.com
-https://bookdown.org/yihui/bookdown/html.html
+
+- [Jekyll](https://jekyllrb.com)
+- [Bookdown / HTML](https://bookdown.org/yihui/bookdown/html.html)
 
 ## Disqus
-https://disqus.com/
 
-## buymeacoffee
-https://www.buymeacoffee.com
+- [Disqus](https://disqus.com/)

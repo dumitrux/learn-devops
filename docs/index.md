@@ -1,4 +1,4 @@
-# DevOps Cheat sheets
+# TL;DR DevOps
 
 DevOps is a set of practices, tools, and a cultural philosophy that automate and integrate the processes between software development and IT teams.
 
@@ -47,7 +47,7 @@ DevOps is a methodology that promotes collaboration and automation between devel
 
 Continuous Integration and Continuous Delivery (CI/CD) is the method to frequently deliver apps to customers by introducing automation into the stages of app development.
 
-- [:simple-githubactions: GitHub Actions](./github-actions.md)
+- [:simple-githubactions: GitHub Actions](./cicd/github-actions.md)
 - [:octicons-codespaces-16: GitHub Codespaces](./github-codespaces.md)
 
 <!-- References:
@@ -70,11 +70,11 @@ Based on the workflow (like GitHub Flow > Git Flow) add Pull/Merge Request to be
 
 ## Containers
 
-- [:simple-docker: Docker](./docker.md)
+- [:simple-docker: Docker](./containers/docker.md)
 
 ### Containers orchestation
 
-- [:simple-kubernetes: Kubernetes](./kubernetes.md)
+- [:simple-kubernetes: Kubernetes](./containers/kubernetes.md)
 
 ## Infrastructure as Code
 
@@ -96,7 +96,7 @@ Sometimes also called Software Configuration Management.
 
 ## Networking
 
-- [:fontawesome-solid-network-wired: CIDR](./networking.md)
+- [:material-ip-network: CIDR](./networking.md)
 
 ## Cloud Computing
 
@@ -106,8 +106,8 @@ Sometimes also called Software Configuration Management.
 
 ## Documentation
 
-- [:simple-materialformkdocs: MkDocs](./mkdocs.md)
-- [:simple-jekyll: Jekyll](./jekyll.md)
+- [:simple-markdown: MkDocs](./documentation/mkdocs.md)
+- [:simple-jekyll: Jekyll](./documentation/jekyll.md)
 
 ## Security
 
@@ -133,3 +133,7 @@ Sometimes also called Software Configuration Management.
 
 - [GitHub - Libre DevOps](https://github.com/libre-devops)
 - [GitHub - TL;DR DevOps](https://github.com/tldr-devops)
+
+## Sponsorship
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/dumitrux)

@@ -1,3 +1,5 @@
+# :simple-linux: Linux OS
+
 ## Linux File System - Directories explained
 
 Here are the most important root directories and their purpose explained

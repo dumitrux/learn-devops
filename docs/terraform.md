@@ -1,4 +1,4 @@
-# Terraform
+# :simple-terraform: Terraform
 
 ## Terrform info
 

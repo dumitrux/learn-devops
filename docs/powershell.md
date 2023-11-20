@@ -1,4 +1,4 @@
-# PowerShell
+# :simple-powershell: PowerShell
 
 ## Scripts
 

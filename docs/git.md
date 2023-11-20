@@ -1,6 +1,7 @@
-# Git
+# :simple-git: Git
 
-## Useful resources:
+## Useful resources
+
 - [Git official documentation](https://git-scm.com/docs)
 - [GitHub Cheat Sheet](https://training.github.com/)
 - [Learn Git Branching interactively](https://learngitbranching.js.org)
@@ -8,6 +9,7 @@
 - [Git Immersion](http://gitimmersion.com)
 
 ## Configure
+
 Set up user information for all your local repositories.
 
 - `git config --global user.name  “[name]”`: Specify the name associated with your commit transactions.
@@ -19,6 +21,7 @@ Set up user information for all your local repositories.
 - `git help`: Provide information on how Git functions, or specify a command for detailed help.
 
 ## Create Repositories
+
 Initiate a new repository or retrieve one from an existing URL.
 
 - `git init`: Commence a project and have Git start monitoring it.
@@ -26,6 +29,7 @@ Initiate a new repository or retrieve one from an existing URL.
 - `git clone [url]`: Download a project along with its complete version history.
 
 ## Stage Changes
+
 Review modifications and prepare them for a commit transaction.
 
 - `git status`: List all new or altered files that need to be committed.
@@ -38,6 +42,7 @@ Review modifications and prepare them for a commit transaction.
 - `git commit`: Open the default text editor for writing the commit message.
 
 ## Group Changes
+
 Name a series of commits and combine completed efforts.
 
 - `git branch`: List all branches in the current repository.
@@ -48,6 +53,7 @@ Name a series of commits and combine completed efforts.
 - `git push -u origin [branch-name]`: Push your branch to the remote repository.
 
 ## Rename File Refactoring
+
 Relocate and remove versioned files.
 
 - `git rm --cached [file]`: Remove the file from version control, but keep it locally.
@@ -55,10 +61,13 @@ Relocate and remove versioned files.
 - `git mv [file-original] [file-renamed]`: Rename the file and stage it for commit.
 
 ## Suppress Tracking
+
 Exclude temporary files and paths. Adding an entry to the `.gitignore` file in the root directory.
+
 - `git ls-files --other --ignored --exclude-standard`: List all ignored files in this project
 
 ## Save Stashes
+
 Store and recover incomplete changes.
 
 - `git stash`: Temporarily preserve all modified tracked files.
@@ -67,6 +76,7 @@ Store and recover incomplete changes.
 - `git stash drop`: Discard the most recently saved set of changes.
 
 ## Review History
+
 Navigate through and inspect the evolution of project files.
 
 - `git log`: List the version history for the current branch.
@@ -75,12 +85,14 @@ Navigate through and inspect the evolution of project files.
 - `git show [commit]`: Display metadata and content changes for the specified commit.
 
 ## Redo Commits
+
 Undo errors and craft a replacement history.
 
 - `git reset [commit]`: Reverse all commits made after [commit], while preserving changes locally.
 - `git reset --hard [commit]`: Discard the entire history and return to the specified commit.
 
 ## Sync Changes
+
 Register a repository bookmark and exchange version history.
 
 - `git fetch [bookmark]`: Download the entire history from the repository bookmark.
@@ -89,6 +101,7 @@ Register a repository bookmark and exchange version history.
 - `git pull`: Download the bookmarked history and incorporate changes.
 
 ## First Project
+
 - `git log`: List all commits along with their respective information.
   - `git log > commits.txt`: Create a file with the content of git log.
 - `git checkout 'commit code'`: Navigate between commits and branches. Using 'master' instead of the code moves to the latest commit.
@@ -98,6 +111,7 @@ Register a repository bookmark and exchange version history.
   - `git reset --hard`: Discard everything in the commit.
 
 ## Branches and Merges
+
 - **Head**: The commit you are currently on.
 - **Branches**: The project's timeline. When you create a new branch, it inherits from the previous one (usually Master), and from that point onwards, commits are only saved to this branch.
   - Main/Master Branch: Created by default when using git init, this is where commits are made.
@@ -110,6 +124,7 @@ Register a repository bookmark and exchange version history.
 - `git branch -a`: Show all branches, including hidden ones.
 
 ## Repository Managers (GitHub, GitLab, etc.)
+
 - `git remote`: Link the local project to a remote project.
 - `git remote add origin ‘https’`:
 - `git remote -v`: Confirm the link.
@@ -119,11 +134,13 @@ Register a repository bookmark and exchange version history.
 - `git push origin 'Branch Name'`: Upload a branch, creating a new one on GitHub.
 
 ## GitHub
+
 - **Issues**: Suggestions, comments to others, things to fix in your own code, etc.
 - **Milestones**: Groups of issues that apply to a project, feature, or time period.
 - **Labels**: A way to categorize different types of issues based on their problem type.
 
 ## Tags
+
 - Tags: Specific points in your project's history used to mark a certain version.
 - `git commit --amend -m "New commit name"`: Changes the name of the current commit.
 - `git push origin master -f`: Forces the push to upload changes even if there are no code changes but there are new commits.
@@ -135,6 +152,7 @@ Register a repository bookmark and exchange version history.
 - `git show v1.0`: Displays information about that version.
 
 ## Workflows
+
 - **Workflow**: A workflow for managing your own projects, working in teams, or with third parties.
 The above information covers personal projects. The following information is about team projects (organizations):
 
@@ -145,17 +163,18 @@ The above information covers personal projects. The following information is abo
 - `git push origin master`: Uploads changes.
 
 For projects with third parties, where you are not an owner or collaborator but want to participate:
-- **Fork**: Clones the original or main repository, unlike Git. Now you'll have one more hidden branch. In addition to 'origin,' you will have 'upstream' (there may be more; check with `git branch -a`), 'upstream/master,' and 'origin/master.' Fork when you want to contribute to the code.
-- 
-First, fork the project on GitHub, then download the project from your fork's https, edit it.
 
+- **Fork**: Clones the original or main repository, unlike Git. Now you'll have one more hidden branch. In addition to 'origin,' you will have 'upstream' (there may be more; check with `git branch -a`), 'upstream/master,' and 'origin/master.' Fork when you want to contribute to the code.
+- First, fork the project on GitHub, then download the project from your fork's https, edit it.
 - `git fetch upstream`
 - `git fetch origin`
 
 ## GitHub Pages
+
 Websites for you and your projects. You can generate a website from your organization or project.
 
 For your user:
+
 1. Create a repository named username.github.io.
 2. `git clone` it.
 3. Create web code.
@@ -163,21 +182,25 @@ For your user:
 Once done, you'll have the domain: username.github.io. Whatever you have in the repository is what will appear on the domain.
 
 For a project:
+
 1. Create a repository.
 2. `git clone` it and create a 'gh-pages' branch (git branch gh-pages).
 3. Create web code.
 4. Upload changes to GitHub (`git push...`). Everything in the 'gh-pages' branch will be on your domain: username.github.io/repositoryname.
 
 ## Deployment
+
 Only if you have a server. SSH allows easy connection to a server or servers without entering a password each time.
 
 With ssh-keygen, you generate a public and private key pair.
-To connect to the server ssh root@domain.com, with the domain or IP if you don't have a domain yet.
+To connect to the server ssh `root@domain.com`, with the domain or IP if you don't have a domain yet.
 
 `git pull`: Equivalent to `git fetch` + `git merge`.
 
 ## Hooks
+
 Mechanisms to trigger scripts when certain actions occur.
+
 - post-commits: Automatically execute commands when git commit -m "Message" is executed.
 - post-checkout
 - post-merge
@@ -186,7 +209,8 @@ Mechanisms to trigger scripts when certain actions occur.
 In the .git folder, you'll find a folder called 'hooks,' and inside, some pre-made hooks. To create a hook, for example, `touch post-commit`, then `nano post-commit` to write the content.
 
 Content:
-```shell
+
+```bash
 #!/bin/sh  # Indicates it's a shell script
 git push origin branch-or-master
 ssh root@domain.com 'bash -s' < deployment.sh  # Connects to the server and executes the shell
@@ -196,7 +220,8 @@ Finally, give commit privileges: `chmod +x post-commit`.
 Now create a deployment file: `touch deployment.sh`.
 
 deployment.sh:
-```shell
+
+```bash
 #!/bin/sh
 cd directory  # Moves to the directory
 git pull origin branch-or-master
@@ -204,6 +229,7 @@ sudo service ghost restart  # Restarts the server, Ghost API
 ```
 
 ## Steps
+
 ```bash
 # 1. Init
 git init

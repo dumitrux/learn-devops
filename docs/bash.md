@@ -1,4 +1,4 @@
-# Linux commands Cheat Sheet
+# :simple-gnubash: Linux commands Cheat Sheet
 
 ## Keyboard Shortcuts
 
