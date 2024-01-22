@@ -2,7 +2,9 @@
 
 ## Usefult resources
 
-- [KodeKloud](https://kodekloud.com)
+- [KodeKloud | CKA Certification Course – Certified Kubernetes Administrator](https://kodekloud.com/courses/certified-kubernetes-administrator-cka/)
+- [Network Policy Editor for Kubernetes](https://editor.networkpolicy.io/)
+- [Kubernetes instance calculator](https://learnk8s.io/kubernetes-instance-calculator)
 
 ## Example
 

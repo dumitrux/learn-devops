@@ -338,3 +338,7 @@ git fetch origin
 
 # 39. Create 'gh-pages' branch
 ```
+
+## Versioning
+
+[Semantic Versioning 2.0.0](https://semver.org/)

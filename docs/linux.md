@@ -52,3 +52,9 @@ Contains all programs directly used by Linux users. Try exploring /usr/bin. What
 `/home`
 Contains a home folder for each regular user on the system. If you are “ben”, then there will be a “/home/ben” directory on the system that you control.
 But you may or may not be able to access other users' home directories depending on your permissions.
+
+## TLS Certificates
+
+Formerly known as SSL certificates, TLS certificates are used to secure communication between a client and a server. They are used to encrypt the data being sent between the two parties, preventing third parties from reading the data.
+
+Free certificates at [Let's Encrypt](https://letsencrypt.org/).
